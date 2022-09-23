@@ -1,11 +1,11 @@
 const ACTION_TYPES = {
-  page: {
+  topRatedPage: {
     // started fetching for a page. 
     // This is to ensure we don't start another fetch of the same page
     // when waiting for the server response
-    cachePageStart: 'page/cache_page_start',  
-    cachePageSuccess: 'page/cache_page_success',
-    cachePageFailed: 'page/cache_page_failed', 
+    cachePageStart: 'topRatedpage/cache_page_start',  
+    cachePageSuccess: 'topRatedpage/cache_page_success',
+    cachePageFailed: 'topRatedpage/cache_page_failed', 
   }
 }
 

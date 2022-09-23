@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
-import pageReducer from "./pageReducer";
+import topRatedPageReducer from "./topRatedPageReducer";
 
 const rootReducer = combineReducers({
-  page: pageReducer
+  topRatedPage: topRatedPageReducer
 });
 
 export default rootReducer;
