@@ -15,11 +15,14 @@ const store = configureStore();
 window.axios = axios;
 window.getState = store.getState;
 window.dispatch = store.dispatch;
-window.fetchPopularPage = fetchNewPopularPage;
+window.fetchPopularPage = fetchNewPopularPage();
+window.fetchTopRatedPage = fetchSaveTopRatedPage();
 root.render(
   <React.StrictMode>
     <Provider store={store}>
       <App />
+      <button onClick={()=>store.dispatch(fetchNewPopularPage(1))}>click me to fetch page 1 for popular</button>
+      <button onClick={()=>store.dispatch(fetchSaveTopRatedPage(1))}>click me to fetch page 1 for top rated</button>
     </Provider>
   </React.StrictMode>
 );

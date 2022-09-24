@@ -20,20 +20,23 @@ const cachePage = data => ({
 });
 
 const fetchNewPopularPage = (pageNum) => (dispatch, getState) => {
-    const page = getState().popularPage.cachePages[pageNum];
+  debugger;
+    const page = getState().popularPage.cachedPages[pageNum];
+    debugger;
     if (page && page.status === STATUS_TYPE.start) {
-            return;
+        return;
       }
     
       if (page && page.status === STATUS_TYPE.success) {
         return;
       }
+
       dispatch(startFetchPage(pageNum)); // fetch started
       fetchPopularPage(pageNum)
         .then(response => dispatch(cachePage(response.data))) // fetch sucess, cache data
         .catch(error => {
           console.log(error);
-          dispatch(failedFetchPage(error)); // fetch failed
+          dispatch(failedFetchPage(pageNum)); // fetch failed
         })
 
 }

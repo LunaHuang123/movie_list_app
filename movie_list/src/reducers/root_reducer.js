@@ -4,7 +4,7 @@ import topRatedPageReducer from "./topRatedPageReducer";
 
 const rootReducer = combineReducers({
   topRatedPage: topRatedPageReducer,
-  popularPageReducer: popularPageReducer
+  popularPage: popularPageReducer
 });
 
 export default rootReducer;
