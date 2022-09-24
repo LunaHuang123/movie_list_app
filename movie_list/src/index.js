@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import configureStore from './store/store';
 import { fetchSaveMovie } from './actionCreators/movieDetailsActionCreator';
+import { fetchSaveTopRatedPage } from './actionCreators/topRatedPageActionCreator';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const store = configureStore();
@@ -25,3 +26,4 @@ setTimeout(() => console.log(store.getState()), 3000);
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
