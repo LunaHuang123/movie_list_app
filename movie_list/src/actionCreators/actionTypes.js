@@ -11,6 +11,11 @@ const ACTION_TYPES = {
     cachePageStart: 'topRatedpage/cache_page_start',  
     cachePageSuccess: 'topRatedpage/cache_page_success',
     cachePageFailed: 'topRatedpage/cache_page_failed', 
+  },
+  popularPage: {
+    cachePageStart: 'popularPage/cache_page_start',  
+    cachePageSuccess: 'popularPage/cache_page_success',
+    cachePageFailed: 'popularPage/cache_page_failed', 
   }
 }
 
