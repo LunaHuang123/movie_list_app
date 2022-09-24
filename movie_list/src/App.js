@@ -4,7 +4,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      REACT IS NOW ONLINE!!!
+      REACT IS NOW ONLINE!!
     </div>
   );
 }
