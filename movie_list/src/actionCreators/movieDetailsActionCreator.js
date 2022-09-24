@@ -29,7 +29,7 @@ const fetchSaveMovie = (movieID) => (dispatch, getState) => {
     return;
   }
 
-  dispatch(startFetchMovie(movie)); // fetch started
+  dispatch(startFetchMovie(movieID)); // fetch started
   fetchMovieDetails(movieID)
     .then(response => dispatch(cacheMovie(response.data))) // fetch sucess, cache data
     .catch(error => {
