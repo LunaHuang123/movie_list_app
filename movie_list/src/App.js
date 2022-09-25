@@ -6,7 +6,7 @@ import TestConnectComponent from './components/test_connect'
 function App() {
   return (
     <div className="App">
-      <TestConnectComponent movieId={278} />
+      <TestConnectComponent movieId={113} />
     </div>
   );
 }
