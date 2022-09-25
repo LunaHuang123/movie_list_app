@@ -5,7 +5,7 @@ function MovieCard(props) {
     return (
         <div className='movie-card-container'>
             <div className='img-container'>
-                <img src={`https://image.tmdb.org/t/p/w342/${this.props.posterPath}`} alt="" />
+                <img src={`https://image.tmdb.org/t/p/w342/${props.posterPath}`} alt="" />
             </div>
             <div>
                 <div className='movie-card-btn-wrap'>
@@ -15,16 +15,16 @@ function MovieCard(props) {
             </div>
             <div>
                 {/* <img src="" alt="" className='movie-card-thumbnail-gif' /> {}  HEART GIF goes here*/ }
-                <p className='movie-card-text'>{this.props.title}</p>
+                <p className='movie-card-text'>{props.title}</p>
             </div>
             <div>
-                <p className='movie-card-text'>Release Date: {this.props.releaseDate}</p>
+                <p className='movie-card-text'>Release Date: {props.releaseDate}</p>
             </div>
             <div>
-                <p className='movie-card-text'>Vote Count: {this.props.voteCount} | Average Score: {this.props.score}</p>
+                <p className='movie-card-text'>Vote Count: {props.voteCount} | Average Score: {props.score}</p>
             </div>
             <div>
-                <p className='movie-card-text'>this.props.Description</p>
+                <p className='movie-card-text'>{props.description}</p>
             </div>
         </div>
     )
