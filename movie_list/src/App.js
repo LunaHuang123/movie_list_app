@@ -1,11 +1,9 @@
 import './App.css';
-import fetchNewPopularPage from './actionCreators/popular_pages_action_creator';
-import { fetchSaveTopRatedPage } from './actionCreators/topRatedPageActionCreator';
-
+import DetailPage from './components/detail_page';
 function App() {
   return (
     <div className="App">
-      REACT IS ONLINE!!
+      <DetailPage movieID={278}/>
     </div>
   );
 }

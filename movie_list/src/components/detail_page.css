@@ -1,0 +1,15 @@
+.detailPage {
+    height:60%;
+    width:60%;
+    position:fixed;
+    top:20%;
+    left:20%;
+    font-size: large;
+    font-weight: bold;
+    color:aquamarine;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
