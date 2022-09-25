@@ -1,11 +1,13 @@
+import { BrowserRouter as Router } from 'react-router-dom';
 import './App.css';
-import fetchNewPopularPage from './actionCreators/popular_pages_action_creator';
-import { fetchSaveTopRatedPage } from './actionCreators/topRatedPageActionCreator';
+import Sidebar from './components/sidebar/sidebar';
 
 function App() {
   return (
     <div className="App">
-      REACT IS ONLINE!!
+      <Router>
+        <Sidebar/>
+      </Router>
     </div>
   );
 }
