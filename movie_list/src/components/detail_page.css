@@ -1,9 +1,10 @@
 .detailPage {
-    height:60%;
-    width:60%;
+    height:80%;
+    width:80%;
     position:fixed;
-    top:20%;
-    left:20%;
+    top:10%;
+    left:10%;
+    padding:40px;
     font-size: large;
     font-weight: bold;
     color:aquamarine;
@@ -12,4 +13,25 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
+}
+
+#dp_title {
+    font-family: 'Times New Roman', Times, serif;
+    font-size:xx-large;
+    color:bisque;
+}
+#dp_overview {
+    font-family:'Courier New', Courier, monospace;
+    font-size:medium;
+    color:coral;
+}
+#dp_poster {
+    height: 300px;
+    width: 300px;
+}
+#dp_release_date{
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:medium;
+    text-decoration: underline;
+    color:brown;
 }

@@ -1,9 +1,10 @@
 import './App.css';
-import DetailPage from './components/detail_page';
+import MovieModal from './components/movie_modal';
+import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   return (
     <div className="App">
-      <DetailPage movieID={278}/>
+      <MovieModal movieID={278}/>
     </div>
   );
 }
