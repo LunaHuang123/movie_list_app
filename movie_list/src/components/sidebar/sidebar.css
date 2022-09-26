@@ -1,0 +1,13 @@
+.nav-link {
+  border-bottom: 1px solid transparent;
+}
+
+.nav-link:hover {
+  border-bottom: 1px solid grey;
+}
+
+.navbar-brand {
+  font-size: 24px;
+  font-family: 'Monoton', sans-serif;
+  cursor: pointer;
+}

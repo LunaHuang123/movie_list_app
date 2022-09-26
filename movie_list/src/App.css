@@ -1,11 +1,8 @@
 .App {
   background-color: #FCE694;
- display: wrap;
+  display: wrap;
   position: relative;
-        left: 30%;
   text-align: center;
-  height: 100em;
-  width: 40em;
 }
 
 .App-logo {

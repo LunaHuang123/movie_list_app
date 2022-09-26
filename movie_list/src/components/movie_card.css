@@ -1,0 +1,31 @@
+.movie-card-container {
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+}
+
+.movie-card-btn-wrap {
+    display:flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.movie-card-like-btn {
+    padding:10px;
+    color:white;
+    background-color:orange
+}
+
+.movie-card-block-btn {
+    padding:10px;
+    color:white;
+    background-color:lightgrey;
+}
+
+.movie-card-text {
+    padding:5px;
+    text-align: center;
+    font-size: 14px;
+}

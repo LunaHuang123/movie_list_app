@@ -40,27 +40,31 @@ const CardGroup = styled.button`
     opacity: 1;
   `}
 `;
-class postsArray extends layout {
 
-    constructor(props) {
-      super(props)
-      this.state = { postsArray }
-      this.sortByMovieNameAsc = this.sortByMovieNameAsc.bind(this);
-      this.sortByMovieNameDesc = this.sortByMovieNameDesc.bind(this);
-    }
+// class postsArray extends layout { // capital first letter
 
-    sortByMovieNameAsc() {
-      this.setState(prevState => {
-        this.state.moviename.sort((a, b) => (a.moviename - b.moviename))
-    });
-    }
+//     constructor(props) {
+//       super(props)
+//       this.state = { postsArray } // state is object
+//       this.sortByMovieNameAsc = this.sortByMovieNameAsc.bind(this);
+//       this.sortByMovieNameDesc = this.sortByMovieNameDesc.bind(this);
+//     }
+    
 
-    sortByMovieNameDesc() {
-      this.setState(prevState => {
-        this.state.moviename.sort((a, b) => (b.moviename - a.moviename))
-    });
-    }
-  
+//     sortByMovieNameAsc() { 
+//       this.setState(prevState => // setState callback function, need return value
+//         { return this.state.moviename.sort((a, b) => (a.moviename - b.moviename))} // only applies to numbers not strings
+//     );
+//     }
+
+//     sortByMovieNameDesc() {
+//       this.setState(prevState => {
+//         this.state.moviename.sort((a, b) => (b.moviename - a.moviename))
+//     });
+//     }
+// }
+
+
 export default function CardGroupComponent({active, setActive, types}) {
    
   return (
