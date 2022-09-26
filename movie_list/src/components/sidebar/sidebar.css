@@ -1,0 +1,17 @@
+.nav-link {
+  border-bottom: 1px solid transparent;
+}
+
+.nav-link:hover {
+  border-bottom: 1px solid grey;
+}
+
+.offcanvas-header .btn-close {
+  filter: invert(100);
+}
+
+.navbar-brand {
+  font-size: 24px;
+  font-family: 'Monoton', sans-serif;
+  cursor: pointer;
+}

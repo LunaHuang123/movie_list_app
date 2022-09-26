@@ -4,15 +4,16 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { LinkContainer } from 'react-router-bootstrap';
+import './sidebar.css';
 
 
 export default function Sidebar() {
   // Container fluid width:100% at all break point
   return (
-    <Navbar bg='dark' variant='dark' expand={'md'} className='mb-3'>
+    <Navbar bg='light' variant='light' expand={'md'} className='mb-3'>
       <Container fluid> 
+        <LinkContainer to='/homepage'><Navbar.Brand>Awesome List</Navbar.Brand></LinkContainer>
         <Navbar.Toggle aria-controls = 'offcanvasNavbar-expand' />
-        <Navbar.Brand>MLDB</Navbar.Brand>
         <Navbar.Offcanvas
           id='offcanvasNavbar-expand'
           arial-labelledby='offcanvasNavbarLabel-expand'
@@ -20,7 +21,7 @@ export default function Sidebar() {
         >
           <Offcanvas.Header closeButton>
             <Offcanvas.Title id='offcanvasNavbarLabel-expand'>
-              MLDB
+              Awesome List
             </Offcanvas.Title>
           </Offcanvas.Header>
           <Offcanvas.Body>
