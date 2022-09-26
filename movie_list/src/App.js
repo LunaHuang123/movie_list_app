@@ -1,11 +1,16 @@
+import { useState } from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 import './App.css';
 import MovieModal from './components/movie_modal';
-import { useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-function App() { //simulating multiple MovieCard components here, they should share the same modal component
+import Sidebar from './components/sidebar/sidebar';
+
+function App() {
   const [showOption,setShow] = useState({show:false,movieID:null});
   return (
     <div className="App">
+      <Router>
+        <Sidebar/>
+      </Router>
       <button onClick={()=>{setShow({show:true,movieID:2})}}>{/*should receive ID from props.movieID*/}
         movie 1
       </button>
