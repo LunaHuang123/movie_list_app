@@ -6,6 +6,8 @@ const initialState = {
 }
 
 const likeBlockReducer = (state = initialState, action) => {
+  Object.freeze(state);
+  let newState = Object.assign({}, state);
   switch (action.type) {
     case (ACTION_TYPES.likedList.addMovie): {
         if(state.blockedList[action.payload.movieID]) delete state.blockedList[action.payload.movieID];
@@ -18,8 +20,8 @@ const likeBlockReducer = (state = initialState, action) => {
         };
     }
     case (ACTION_TYPES.likedList.removeMovie): {
-        delete state.likedList[action.payload.movieID];
-        return state;
+        delete newState.likedList[action.payload.movieID];
+        return newState;
     } 
     case (ACTION_TYPES.blockedList.addMovie): {
         if(state.likedList[action.payload.movieID]) delete state.likedList[action.payload.movieID];
@@ -32,8 +34,8 @@ const likeBlockReducer = (state = initialState, action) => {
         };
     }
     case (ACTION_TYPES.blockedList.removeMovie): {
-        delete state.blockedList[action.payload.movieID];
-        return state;
+        delete newState.blockedList[action.payload.movieID];
+        return newState;
     }  
     default : 
       return state;
