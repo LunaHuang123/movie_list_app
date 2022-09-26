@@ -1,11 +1,24 @@
 import './App.css';
-import fetchNewPopularPage from './actionCreators/popular_pages_action_creator';
-import { fetchSaveTopRatedPage } from './actionCreators/topRatedPageActionCreator';
-
-function App() {
+import MovieModal from './components/movie_modal';
+import { useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+function App() { //simulating multiple MovieCard components here, they should share the same modal component
+  const [showOption,setShow] = useState({show:false,movieID:null});
   return (
     <div className="App">
-      REACT IS ONLINE!!
+      <button onClick={()=>{setShow({show:true,movieID:2})}}>{/*should receive ID from props.movieID*/}
+        movie 1
+      </button>
+      <button onClick={()=>{setShow({show:true,movieID:278})}}>{/*should receive ID from props.movieID*/}
+        movie 2
+      </button>
+      <button onClick={()=>{setShow({show:true,movieID:573})}}>{/*should receive ID from props.movieID*/}
+        movie 3
+      </button>
+      <button onClick={()=>{setShow({show:true,movieID:3})}}>{/*should receive ID from props.movieID*/}
+        movie 4
+      </button>
+      <MovieModal showOption={showOption} setShow={setShow}/>
     </div>
   );
 }
