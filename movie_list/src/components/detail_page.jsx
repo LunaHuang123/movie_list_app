@@ -14,7 +14,7 @@ function DetailPage(props) {
   }
   return (
     <div className='detailPage' style={{ backgroundImage: 'url(' + baseUrl + props.data.backdrop_path + ')', backgroundSize: 'cover' }}>
-        <img id="dp_poster" src={baseUrl+props.data.poster_path}/>
+        <img id="dp_poster" src={baseUrl+props.data.poster_path} alt={''}/>
         <div id="dp_title">{props.data.title}</div>
         {props.data.genres && <ul>{props.data.genres.map(genre => (<li>{genre.name}</li>))}</ul>}
         <div id="dp_overview">Overview: {props.data.overview}</div>
