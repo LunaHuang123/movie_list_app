@@ -4,7 +4,7 @@ import './App.css';
 import TopRatedPage from './pages/top_rated_page';
 import MovieModal from './components/movie_modal';
 import Sidebar from './components/sidebar/sidebar';
-
+import LikeBlockStoreTest from './tests/likeBlockStoreTest';
 
 function App() {
   const [showOption,setShow] = useState({show:false,movieID:null});
@@ -19,6 +19,7 @@ function App() {
           </Route>
         </Routes>
       </Router>
+      <LikeBlockStoreTest/>
       <MovieModal showOption={showOption} setShow={setShow}/>
     </div>
   );
