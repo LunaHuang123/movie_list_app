@@ -20,9 +20,7 @@ const cachePage = data => ({
 });
 
 const fetchNewPopularPage = (pageNum) => (dispatch, getState) => {
-  debugger;
     const page = getState().popularPage.cachedPages[pageNum];
-    debugger;
     if (page && page.status === STATUS_TYPE.start) {
         return;
       }

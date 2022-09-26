@@ -23,7 +23,6 @@ const cachePage = (data) => ({
 // this step is async, so we should return a thunk function
 // for react-thunk middleware to handle
 const fetchSaveTopRatedPage = (pageNumber) => (dispatch, getState) => {
-  debugger;
   const page = getState().topRatedPage.cachedPages[pageNumber];
   if (page && page.status === STATUS_TYPE.start) {
     // console.log(`fetch for page ${pageNumber} is in progress`);

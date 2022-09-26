@@ -1,8 +1,11 @@
 import { useState } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import './App.css';
+
+import MovieList from './components/movieListComponent/layout';
 import MovieModal from './components/movie_modal';
 import Sidebar from './components/sidebar/sidebar';
+
 
 function App() {
   const [showOption,setShow] = useState({show:false,movieID:null});
@@ -23,6 +26,7 @@ function App() {
       <button onClick={()=>{setShow({show:true,movieID:3})}}>{/*should receive ID from props.movieID*/}
         movie 4
       </button>
+      <MovieList/>
       <MovieModal showOption={showOption} setShow={setShow}/>
     </div>
   );
