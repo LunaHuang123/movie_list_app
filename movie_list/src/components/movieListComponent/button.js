@@ -1,8 +1,15 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
+const arrowStyle = {
+  position: 'absolute',
+  right: '10px',
+  top: '50%',
+  transform: 'translate(0, -50%)', 
+}
 
 const CardGroup = styled.button`
+  position: relative;
   padding: 10px 30px;
   cursor: pointer;
   opacity: 0.6;
@@ -42,9 +49,8 @@ const CardGroup = styled.button`
 
 
 
-export default function CardGroupComponent({active, setActive, types, sortOption, setSortOption}) {
+export default function CardGroupComponent({types, sortOption, setSortOption}) {
    const handleButtonClick = (buttonType) => {
-    setActive(buttonType);
      if(buttonType === sortOption.type) {
       setSortOption({
         type: buttonType,
@@ -64,15 +70,14 @@ export default function CardGroupComponent({active, setActive, types, sortOption
         {types.map((type) => (
           <CardGroup
             key={type}
-            active={active === type}
+            active={sortOption.type === type}
             onClick={() => handleButtonClick(type)}
           >
-            {`${type} ${type === sortOption.type? (sortOption.isAscending? '↑':'↓'):' '} `}
-            </CardGroup>
+            {type}
+            <span style={arrowStyle}>{type === sortOption.type? (sortOption.isAscending? '↑':'↓'):' '}</span>
+          </CardGroup>
         ))}
       </div>
-      <p />
-      <p> Sorting {sortOption.type}, {sortOption.isAscending? 'Ascending' : 'Descending'} </p>
     </>
   );
 }

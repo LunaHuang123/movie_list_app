@@ -1,6 +1,7 @@
-import { SORT_TYPE } from './constants'
+import { getMouseEventOptions } from '@testing-library/user-event/dist/utils';
+import { SORT_TYPE, SORT_BUTTON_TYPE } from './constants'
 
-export default function getSortFunction(type) {
+function getSortFunction(type) {
   switch (type) {
     case (SORT_TYPE.titleAscend): 
       return (a, b) => a.title.localeCompare(b.title);
@@ -23,6 +24,20 @@ export default function getSortFunction(type) {
   }
 }
 
+function mapOptionToType (option) {
+  switch (option.type) {
+    case (SORT_BUTTON_TYPE.title):
+      return option.isAscending? SORT_TYPE.titleAscend: SORT_TYPE.titleDecend;
+    case (SORT_BUTTON_TYPE.release_date):
+      return option.isAscending? SORT_TYPE.releaseDateAscend: SORT_TYPE.releaseDateDescend;
+    case (SORT_BUTTON_TYPE.vote_count):
+      return option.isAscending? SORT_TYPE.voteCountAscend: SORT_TYPE.voteCountDescend;
+    case (SORT_BUTTON_TYPE.average_score):
+      return option.isAscending? SORT_TYPE.voteAverageAscend: SORT_TYPE.voteAverageDescend;
+    default:
+      return '';
+  }
+}
 
 function getParsedDate(date) {
   try {
@@ -130,6 +145,10 @@ function testSorting () {
   console.log(moviesList.map(a => a).sort(getSortFunction(SORT_TYPE.releaseDateAscend)).map(a => a.release_date));
   console.log(SORT_TYPE.releaseDateDescend);
   console.log(moviesList.map(a => a).sort(getSortFunction(SORT_TYPE.releaseDateDescend)).map(a => a.release_date));
+}
+
+export default function (option) {
+  return getSortFunction(mapOptionToType(option));
 }
 
 export {testSorting};
