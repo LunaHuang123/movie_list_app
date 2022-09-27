@@ -8,42 +8,31 @@ class Homepage extends React.Component {
             index: 0,
             popularMoviesList: this.props.popularList
         }
-        this.prevBtnHandler = this.prevBtnHandler.bind(this);
-        this.nextBtnHandler = this.nextBtnHandler.bind(this);
     }
 
     componentDidMount() {
         this.props.fetchPopularPage(1);
+        setInterval(() =>{
+            if (this.props.popularList && this.state.index < this.props.popularList.length-1) {
+                this.setState({ index: this.state.index+1})
+            } else if (this.props.popularList && this.state.index === this.props.popularList.length-1) {
+                this.setState({index: 0})
+            }
+        }, 1500)
     }
 
-    prevBtnHandler() {
-        if(this.state.index === 0) {
-            this.setState({ index: this.props.popularList.length-1});
-        } else {
-            this.setState({ index: this.state.index-1});
-        }
-    }
 
-    nextBtnHandler() {
-        if(this.state.index === this.props.popularList.length-1) {
-            this.setState({ index: 0});
-        } else {
-            this.setState({ index: this.state.index+1});
-        }
-    }
 
     render() {
         return (
         (this.props.popularList.length > 0) ?
-            <div>
-                <p>Welcome to Movie List. Check out some of our Selections!</p>
-                <div>
-                    <button onClick={this.prevBtnHandler}>Prev</button>
-                    <div>
-                        <img onClick={this.loadMovieDetails} src={`${baseURL}${this.props.popularList[this.state.index].poster_path}`} alt="" />
+            <div className='homepage'>
+                <p className='homepage-intro'>Welcome to Movie List. Check out some of our Selections!</p>
+                <div className='homepage-carosel'>
+                    <div className='homepage-carosel-details'>
+                        <img onClick={this.loadMovieDetails} src={`https://image.tmdb.org/t/p/w342${this.props.popularList[this.state.index].poster_path}`} alt="" />
                         <p>{this.props.popularList[this.state.index].title}</p>
                     </div>
-                    <button onClick={this.nextBtnHandler}>Next</button>
                 </div>
                 
             </div>
