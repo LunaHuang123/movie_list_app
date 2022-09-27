@@ -6,6 +6,7 @@ import MovieModal from './components/movie_modal';
 import Sidebar from './components/sidebar/sidebar';
 import LikedMoviesListPage from './pages/liked_movies_list_page';
 import BlockedMoviesListPage from './pages/blocked_movies_list_page';
+import HomePage from './components/homepage/homepage_container'
 
 function App() {
   const [showOption,setShow] = useState({show:false,movieID:null});
@@ -22,6 +23,7 @@ function App() {
           <Route path='blocked_movies' element={<BlockedMoviesListPage />}/>
         </Routes>
       </Router>
+      <HomePage/>
       <MovieModal showOption={showOption} setShow={setShow}/>
     </div>
   );
