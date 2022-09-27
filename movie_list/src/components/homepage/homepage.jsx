@@ -8,17 +8,22 @@ class Homepage extends React.Component {
             index: 0,
             popularMoviesList: this.props.popularList
         }
+        this.intervalHandler = null;
     }
 
     componentDidMount() {
         this.props.fetchPopularPage(1);
-        setInterval(() =>{
+        this.intervalHandler = setInterval(() =>{
             if (this.props.popularList && this.state.index < this.props.popularList.length-1) {
                 this.setState({ index: this.state.index+1})
             } else if (this.props.popularList && this.state.index === this.props.popularList.length-1) {
                 this.setState({index: 0})
             }
         }, 1500)
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.intervalHandler);
     }
 
 
