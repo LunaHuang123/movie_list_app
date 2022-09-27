@@ -30,7 +30,7 @@ const fetchNewPopularPage = (pageNum) => (dispatch, getState) => {
       return;
     }
 
-    // dispatch(startFetchPage(pageNum))
+    dispatch(startFetchPage(pageNum))
     fetchPopularPage(pageNum)
     .then(response => dispatch(cachePage(response.data))) // fetch sucess, cache data
     .catch(error => {
