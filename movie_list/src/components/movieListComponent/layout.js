@@ -6,8 +6,11 @@ import MovieCard from '../movie_card/movie_card';
 // (parent: App) -- blockedMovies --> MovieList 
 
 function MovieList({ movieListData, blockedMovies }) {
-  const types = ["Title", "Release Date", "Vote Count", "Vote Average"];
-  const [active, setActive] = useState(types[0]);
+  const types = ["Title", "Release Date", "Vote Count", "Average Score"];
+  const sort = ["Ascdending", "Descending"];
+  const [active, setActive] = useState(types[0] + sort[0]);
+  const [sortOption, setSortOption] = useState({type: null, isAscending: false});
+
   movieListData = movieListData || sampleArray;
     
       // const result = postsArray
@@ -19,6 +22,8 @@ function MovieList({ movieListData, blockedMovies }) {
       // }, []);
       // console.log(result);
 
+     
+
   // later when sort button is completed add sorting function
   // when blocked list is completed add filter function
   // const displayedMovies = movieListData
@@ -27,7 +32,7 @@ function MovieList({ movieListData, blockedMovies }) {
 
   return (
     <div>
-      <Button active={active} setActive={setActive} types={types}/>
+      <Button active={active} setActive={setActive} types={types} sortOption={sortOption} setSortOption={setSortOption}/>
       <div>
         {movieListData.map(movie => 
           <MovieCard
