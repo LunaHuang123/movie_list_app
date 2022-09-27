@@ -23,20 +23,19 @@ const fetchNewPopularPage = (pageNum) => (dispatch, getState) => {
     const page = getState().popularPage.cachedPages[pageNum];
     if (page && page.status === STATUS_TYPE.start) {
         return;
-      }
+    }
     
-      if (page && page.status === STATUS_TYPE.success) {
-        return;
-      }
+    if (page && page.status === STATUS_TYPE.success) {
+      return;
+    }
 
-      dispatch(startFetchPage(pageNum)); // fetch started
-      fetchPopularPage(pageNum)
-        .then(response => dispatch(cachePage(response.data))) // fetch sucess, cache data
-        .catch(error => {
-          console.log(error);
-          dispatch(failedFetchPage(pageNum)); // fetch failed
-        })
-
+    dispatch(startFetchPage(pageNum))
+    fetchPopularPage(pageNum)
+    .then(response => dispatch(cachePage(response.data))) // fetch sucess, cache data
+    .catch(error => {
+      console.log(error);
+      dispatch(failedFetchPage(pageNum)); // fetch failed
+    })
 }
 
 export default fetchNewPopularPage;
