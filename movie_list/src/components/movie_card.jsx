@@ -54,7 +54,7 @@ class MovieCard extends React.Component{
                 <div>
                     <div className='movie-card-btn-wrap'>
                         <button onClick={this.likeHandler} className='movie-card-like-btn'>{this.state.isLike ? 'Unlike' : 'Like'}</button>
-                        <button onClick={this.blockHandler} className='movie-card-block-btn'>{this.state.isLike ? 'Unblock' : 'Block'}</button>
+                        <button onClick={this.blockHandler} className='movie-card-block-btn'>{this.state.isBlock ? 'Unblock' : 'Block'}</button>
                         {this.state.showDetails ? <button>Show Details</button> : <></>}
                     </div>
                 </div>
