@@ -19,12 +19,6 @@ const CardGroup = styled.button`
   `}
 `;
  
-const CardGroupComponent = () => {
-  const [toggle, setToggle] = useState(false);
-  const toggler = () => {
-    toggle ? setToggle(false): setToggle(true);
-  }
-}
 
  // class PostsList extends Layout { // capital first letter
  //   constructor(props) {
@@ -48,8 +42,22 @@ const CardGroupComponent = () => {
 
 
 
-export default function CardGroupComponent({active, setActive, types, sort}) {
-   
+export default function CardGroupComponent({active, setActive, types, sortOption, setSortOption}) {
+   const handleButtonClick = (buttonType) => {
+    setActive(buttonType);
+     if(buttonType === sortOption.type) {
+      setSortOption({
+        type: buttonType,
+        isAscending: !sortOption.isAscending
+     });
+     } else{
+      setSortOption({
+        type: buttonType,
+        isAscending: sortOption.isAscending
+      })
+     }
+   }
+
   return (
     <>
       <div>
@@ -57,17 +65,14 @@ export default function CardGroupComponent({active, setActive, types, sort}) {
           <CardGroup
             key={type}
             active={active === type}
-            onClick={() => setActive(type)}
+            onClick={() => handleButtonClick(type)}
           >
-          <CardGroupComponent onClick={Toggler}/>
-          {toggle ? <span>Ascdending</span> : <span>Descending</span>}
-            {type}
-          </CardGroup>
-          
+            {`${type} ${type === sortOption.type? (sortOption.isAscending? '↑':'↓'):' '} `}
+            </CardGroup>
         ))}
       </div>
       <p />
-      <p> This is the: {active} </p>
+      <p> Sorting {sortOption.type}, {sortOption.isAscending? 'Ascending' : 'Descending'} </p>
     </>
   );
 }

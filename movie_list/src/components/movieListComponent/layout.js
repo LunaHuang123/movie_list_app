@@ -9,6 +9,8 @@ function MovieList({ movieListData, blockedMovies }) {
   const types = ["Title", "Release Date", "Vote Count", "Average Score"];
   const sort = ["Ascdending", "Descending"];
   const [active, setActive] = useState(types[0] + sort[0]);
+  const [sortOption, setSortOption] = useState({type: null, isAscending: false});
+
   movieListData = movieListData || sampleArray;
     
       // const result = postsArray
@@ -30,7 +32,7 @@ function MovieList({ movieListData, blockedMovies }) {
 
   return (
     <div>
-      <Button active={active} setActive={setActive} types={types} sort={sort}/>
+      <Button active={active} setActive={setActive} types={types} sortOption={sortOption} setSortOption={setSortOption}/>
       <div>
         {movieListData.map(movie => 
           <MovieCard
