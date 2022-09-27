@@ -4,7 +4,8 @@ import './App.css';
 import TopRatedPage from './pages/top_rated_page';
 import MovieModal from './components/movie_modal';
 import Sidebar from './components/sidebar/sidebar';
-import LikeBlockStoreTest from './tests/likeBlockStoreTest';
+import LikedMoviesListPage from './pages/liked_movies_list_page';
+import BlockedMoviesListPage from './pages/blocked_movies_list_page';
 
 function App() {
   const [showOption,setShow] = useState({show:false,movieID:null});
@@ -17,9 +18,10 @@ function App() {
             <Route index element={<TopRatedPage />}/>
             <Route path=':pageNumber' element={<TopRatedPage />}/>
           </Route>
+          <Route path='liked_movies' element={<LikedMoviesListPage />}/>
+          <Route path='blocked_movies' element={<BlockedMoviesListPage />}/>
         </Routes>
       </Router>
-      <LikeBlockStoreTest/>
       <MovieModal showOption={showOption} setShow={setShow}/>
     </div>
   );

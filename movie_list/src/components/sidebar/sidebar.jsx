@@ -10,9 +10,9 @@ import './sidebar.css';
 export default function Sidebar() {
   // Container fluid width:100% at all break point
   return (
-    <Navbar bg='light' variant='light' expand={'lg'} className='mb-3' fixed='top'>
+    <Navbar bg='light' variant='light' expand={'lg'} className='mb-3' fixed='top' collapseOnSelect>
       <Container fluid> 
-        <LinkContainer to='/homepage'><Navbar.Brand>Awesome List</Navbar.Brand></LinkContainer>
+        <LinkContainer to='/homepage'><Navbar.Brand><h1>Awesome List</h1></Navbar.Brand></LinkContainer>
         <Navbar.Toggle aria-controls = 'offcanvasNavbar-expand' />
         <Navbar.Offcanvas
           id='offcanvasNavbar-expand'

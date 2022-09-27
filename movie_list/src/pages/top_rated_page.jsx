@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import MovieList from '../components/movieListComponent/layout';
 import { fetchSaveTopRatedPage } from '../actionCreators/topRatedPageActionCreator';
 
-// A wrapper that fetch page data
+// A wrapper that fetch page data then feed to innercomponent
 const fetchDataWrapper = (InnerComponent) => {
   return function (props) {
     let {data, status, fetchData, pageNumber} = props;
@@ -12,7 +12,7 @@ const fetchDataWrapper = (InnerComponent) => {
       fetchData(pageNumber);
     }, [pageNumber, fetchData])
     return (
-      <InnerComponent movieListData={data}/>
+      <InnerComponent movieListData={data} status={status}/>
     );
   }
 }
@@ -58,6 +58,9 @@ export default function TopRatedPage(props) {
   }
 
   return (
-    <ConnectList pageNumber={pageNumber} />
+    <div>
+      <h2>Top Rated Movies</h2>
+      <ConnectList pageNumber={pageNumber} />
+    </div>
   );
 }
