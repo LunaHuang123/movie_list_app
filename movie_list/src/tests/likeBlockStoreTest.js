@@ -1,15 +1,32 @@
-import configureStore from '../store/store';
+// import configureStore from '../store/store';
 import { likeMovie, unlikeMovie, blockMovie, unblockMovie } from '../actionCreators/like_block_action_creator';
-const myStore = configureStore(); //Assume the buttons are connected to temporary redux store, need to connect the component to real store later
+// const myStore = configureStore(); //Assume the buttons are connected to temporary redux store, need to connect the component to real store later
 let prevLikedList = {};
 let prevBlockedList = {}; //check reference
-function LikeBlockStoreTest() {
+
+const movieOne = {
+  id: 616037,
+  payload: {
+    title: 'Thor: Love and Thunder',
+    posterPath:'/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg',
+  }
+};
+const movieTwo = {
+  id: 19995,
+  payload: {
+    title: 'Avatar',
+    posterPath: '/jRXYjXNq0Cs2TcJjLkki24MLp7u.jpg'
+  }
+};
+
+function LikeBlockStoreTest(props) {
+  const myStore = props.store;
   return (
     <div className="LikeBlockStoreTest">
       <button onClick={()=>{
         prevLikedList = myStore.getState().likeBlockLists.likedList;
         prevBlockedList = myStore.getState().likeBlockLists.blockedList;
-        myStore.dispatch(likeMovie(278,1));/*get movieID and pageNum from props*/
+        myStore.dispatch(likeMovie(movieOne.id, movieOne.payload));/*get movieID and pageNum from props*/
         console.log("prevLikedList: ",prevLikedList);
         console.log("prevBlockedList: ",prevBlockedList);
         console.log("likedlist now: ",myStore.getState().likeBlockLists.likedList);
@@ -21,7 +38,7 @@ function LikeBlockStoreTest() {
       <button onClick={()=>{
         prevLikedList = myStore.getState().likeBlockLists.likedList;
         prevBlockedList = myStore.getState().likeBlockLists.blockedList;
-        myStore.dispatch(likeMovie(2,1));/*get movieID and pageNum from props*/
+        myStore.dispatch(likeMovie(movieTwo.id, movieTwo.payload));/*get movieID and pageNum from props*/
         console.log("prevLikedList: ",prevLikedList);
         console.log("prevBlockedList: ",prevBlockedList);
         console.log("likedlist now: ",myStore.getState().likeBlockLists.likedList);
@@ -33,7 +50,7 @@ function LikeBlockStoreTest() {
       <button onClick={()=>{
         prevLikedList = myStore.getState().likeBlockLists.likedList;
         prevBlockedList = myStore.getState().likeBlockLists.blockedList;
-        myStore.dispatch(unlikeMovie(278,1));
+        myStore.dispatch(unlikeMovie(movieOne.id));
         console.log("prevLikedList: ",prevLikedList);
         console.log("prevBlockedList: ",prevBlockedList);
         console.log("likedlist now: ",myStore.getState().likeBlockLists.likedList);
@@ -45,7 +62,7 @@ function LikeBlockStoreTest() {
       <button onClick={()=>{
         prevLikedList = myStore.getState().likeBlockLists.likedList;
         prevBlockedList = myStore.getState().likeBlockLists.blockedList;
-        myStore.dispatch(blockMovie(278,1));
+        myStore.dispatch(blockMovie(movieOne.id, movieOne.payload));
         console.log("prevLikedList: ",prevLikedList);
         console.log("prevBlockedList: ",prevBlockedList);
         console.log("likedlist now: ",myStore.getState().likeBlockLists.likedList);
@@ -57,7 +74,7 @@ function LikeBlockStoreTest() {
       <button onClick={()=>{
         prevLikedList = myStore.getState().likeBlockLists.likedList;
         prevBlockedList = myStore.getState().likeBlockLists.blockedList;
-        myStore.dispatch(unblockMovie(278,1));
+        myStore.dispatch(unblockMovie(movieOne.id));
         console.log("prevLikedList: ",prevLikedList);
         console.log("prevBlockedList: ",prevBlockedList);
         console.log("likedlist now: ",myStore.getState().likeBlockLists.likedList);
@@ -70,3 +87,6 @@ function LikeBlockStoreTest() {
   );
 }
 export default LikeBlockStoreTest;
+
+
+
