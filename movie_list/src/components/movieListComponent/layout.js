@@ -2,7 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import Button from './button';
 import sampleArray from './sampleArray.json';
-import MovieCard from '../movie_card_container';
+import MovieCard from '../movie_card/movie_card_container';
 // (parent: App) -- blockedMovies --> MovieList 
 
 function MovieList({ movieListData, blockedMovies }) {
@@ -22,22 +22,20 @@ function MovieList({ movieListData, blockedMovies }) {
       // }, []);
       // console.log(result);
 
-     
-
   // later when sort button is completed add sorting function
-  // when blocked list is completed add filter function
-  // const displayedMovies = movieListData
+  // when blocked list is completed add filter function    // const displayedMovies = movieListData
   //   .filter( movie => check movie is (NOT) in blockMovies )
   //   .sort(... sorting logic )
 
   return (
     <div>
-      <Button active={active} setActive={setActive} types={types} sortOption={sortOption} setSortOption={setSortOption}/>
+      <Button active={active} setActive={setActive} types={types} sortOption={sortOption} setSortOption = {setSortOption}/>
       <div>
         {movieListData.map(movie => 
           <MovieCard
             key={movie.id}
             title={movie.title}
+            movieId={parseInt(movie.id)}
             posterPath={movie.poster_path}
             releaseDate={movie.release_date}
             voteCount={movie.vote_count}

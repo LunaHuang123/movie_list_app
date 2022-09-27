@@ -1,5 +1,5 @@
 import React from 'react';
-import MovieCard from '../movie_card';
+import MovieCard from '../movie_card/movie_card_container';
 import { connect } from 'react-redux';
 import FROM_LIST from '../../constants/from_list';
 import { likeMovie, unlikeMovie, blockMovie, unblockMovie } from '../../actionCreators/like_block_action_creator';
@@ -7,7 +7,7 @@ import { likeMovie, unlikeMovie, blockMovie, unblockMovie } from '../../actionCr
 function LikeBlockMoviesList (props) {
   // from fromList can be one of the following values 'liked_list', 'blocked_list',
   // and help MovieCard Component to decide how to render
-  let { movies, fromList, likeMovie, unlikeMovie, blockMovie, unblockMovie} = props;
+  let { movies, fromList, setShowDetail} = props;
   if (movies.length === 0) {
     return (
       fromList === FROM_LIST.likedList
@@ -21,13 +21,13 @@ function LikeBlockMoviesList (props) {
         movie => 
           <MovieCard 
             key={movie.id}
-            movieID={movie.id}
+            movieId={movie.id}
             title={movie.title}
             posterPath={movie.posterPath}
-            likeMovie={likeMovie}
-            unlikeMovie={unlikeMovie}
-            blockMovie={blockMovie}
-            unblockMovie={unblockMovie}
+            showDetails
+            imgClickHandler={() => setShowDetail({show: true, movieID: movie.id})}
+            like={movie.isLike}
+            block={movie.isBlock}
           />
       )}
     </div>
@@ -39,15 +39,16 @@ const mapStateToProps = (state, ownProps) => {
   const list = ownProps.fromList === FROM_LIST.likedList
     ?state.likeBlockLists.likedList
     :state.likeBlockLists.blockedList;
+  
   for (let movieID in list) {
     movies.push({
       ...list[movieID],
-      id: movieID
+      id: movieID,
+      isLike: state.likeBlockLists.likedList.hasOwnProperty(movieID),
+      isBlock: !!(state.likeBlockLists.blockedList[movieID])
     });
   }
   return {movies};
 }
 
-const mapDispatchToProps = {likeMovie, unlikeMovie, blockMovie, unblockMovie};
-
-export default connect(mapStateToProps, mapDispatchToProps)(LikeBlockMoviesList);
+export default connect(mapStateToProps, {})(LikeBlockMoviesList);
