@@ -16,6 +16,14 @@ const ACTION_TYPES = {
     cachePageStart: 'popularPage/cache_page_start',  
     cachePageSuccess: 'popularPage/cache_page_success',
     cachePageFailed: 'popularPage/cache_page_failed', 
+  },
+  likedList: {
+    addMovie: 'likedList/addMovie',
+    removeMovie: 'likedList/removeMovie',
+  },
+  blockedList: {
+    addMovie: 'blockedList/addMovie',
+    removeMovie: 'blockedList/removeMovie',
   }
 }
 
