@@ -10,4 +10,4 @@ const mDTP = {
     unblockMovie : (movieId) => unblockMovie(movieId)
 }
 
-connect (null,mDTP)(MovieCard)
+export default connect (null,mDTP)(MovieCard);

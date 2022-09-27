@@ -1,5 +1,5 @@
 import React from 'react';
-import MovieCard from '../movie_card/movie_card';
+import MovieCard from '../movie_card/movie_card_container';
 import { connect } from 'react-redux';
 import FROM_LIST from '../../constants/from_list';
 import { likeMovie, unlikeMovie, blockMovie, unblockMovie } from '../../actionCreators/like_block_action_creator';
