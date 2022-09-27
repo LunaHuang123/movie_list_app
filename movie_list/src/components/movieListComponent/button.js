@@ -1,28 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-const theme = {
-    blue: {
-      default: "#3f51b5",
-      hover: "#283593"
-    },
-  };
-
-const Button = styled.button`
-  background-color: ${(props) => theme[props.theme].default};
-  color: white;
-  padding: 5px 15px;
-  border-radius: 5px;
-  outline: 0;
-  transition: ease background-color 250ms;
-  &:hover {
-    background-color: ${(props) => theme[props.theme].hover};
-  }
-  &:disabled {
-    cursor: default;
-    opacity: 0.7;
-  }
-`;
 
 const CardGroup = styled.button`
   padding: 10px 30px;
@@ -40,17 +18,21 @@ const CardGroup = styled.button`
     opacity: 1;
   `}
 `;
+ 
+const CardGroupComponent = () => {
+  const [toggle, setToggle] = useState(false);
+  const toggler = () => {
+    toggle ? setToggle(false): setToggle(true);
+  }
+}
 
-// class postsArray extends layout { // capital first letter
-
-//     constructor(props) {
-//       super(props)
-//       this.state = { postsArray } // state is object
-//       this.sortByMovieNameAsc = this.sortByMovieNameAsc.bind(this);
-//       this.sortByMovieNameDesc = this.sortByMovieNameDesc.bind(this);
-//     }
+ // class PostsList extends Layout { // capital first letter
+ //   constructor(props) {
+ //     super(props)
+ //      this.sortByMovieNameAsc = this.sortByMovieNameAsc.bind(this);
+ //      this.sortByMovieNameDesc = this.sortByMovieNameDesc.bind(this);
+ //    }
     
-
 //     sortByMovieNameAsc() { 
 //       this.setState(prevState => // setState callback function, need return value
 //         { return this.state.moviename.sort((a, b) => (a.moviename - b.moviename))} // only applies to numbers not strings
@@ -65,7 +47,8 @@ const CardGroup = styled.button`
 // }
 
 
-export default function CardGroupComponent({active, setActive, types}) {
+
+export default function CardGroupComponent({active, setActive, types, sort}) {
    
   return (
     <>
@@ -76,8 +59,11 @@ export default function CardGroupComponent({active, setActive, types}) {
             active={active === type}
             onClick={() => setActive(type)}
           >
+          <CardGroupComponent onClick={Toggler}/>
+          {toggle ? <span>Ascdending</span> : <span>Descending</span>}
             {type}
           </CardGroup>
+          
         ))}
       </div>
       <p />
