@@ -7,7 +7,7 @@ import { likeMovie, unlikeMovie, blockMovie, unblockMovie } from '../../actionCr
 function LikeBlockMoviesList (props) {
   // from fromList can be one of the following values 'liked_list', 'blocked_list',
   // and help MovieCard Component to decide how to render
-  let { movies, fromList} = props;
+  let { movies, fromList, setShowDetail} = props;
   if (movies.length === 0) {
     return (
       fromList === FROM_LIST.likedList
@@ -24,6 +24,10 @@ function LikeBlockMoviesList (props) {
             movieId={movie.id}
             title={movie.title}
             posterPath={movie.posterPath}
+            showDetails
+            imgClickHandler={() => setShowDetail({show: true, movieID: movie.id})}
+            like={movie.isLike}
+            block={movie.isBlock}
           />
       )}
     </div>
@@ -35,10 +39,13 @@ const mapStateToProps = (state, ownProps) => {
   const list = ownProps.fromList === FROM_LIST.likedList
     ?state.likeBlockLists.likedList
     :state.likeBlockLists.blockedList;
+  
   for (let movieID in list) {
     movies.push({
       ...list[movieID],
-      id: movieID
+      id: movieID,
+      isLike: state.likeBlockLists.likedList.hasOwnProperty(movieID),
+      isBlock: !!(state.likeBlockLists.blockedList[movieID])
     });
   }
   return {movies};

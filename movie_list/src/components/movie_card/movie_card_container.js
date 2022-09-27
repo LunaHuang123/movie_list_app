@@ -11,3 +11,4 @@ const mDTP = {
 }
 
 export default connect (null,mDTP)(MovieCard);
+
