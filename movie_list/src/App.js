@@ -4,26 +4,30 @@ import './App.css';
 import TopRatedPage from './pages/top_rated_page';
 import MovieModal from './components/movie_modal';
 import Sidebar from './components/sidebar/sidebar';
-import LikedMoviesListPage from './pages/liked_movies_list_page';
-import BlockedMoviesListPage from './pages/blocked_movies_list_page';
+import HomePage from './components/homepage/homepage_container'
 
 function App() {
   const [showOption,setShow] = useState({show:false,movieID:null});
   return (
-    <div className="App">
-      <Router>
-        <Sidebar/>
-        <Routes>
-          <Route path='top_rated'>
-            <Route index element={<TopRatedPage />}/>
-            <Route path=':pageNumber' element={<TopRatedPage />}/>
-          </Route>
-          <Route path='liked_movies' element={<LikedMoviesListPage />}/>
-          <Route path='blocked_movies' element={<BlockedMoviesListPage />}/>
-        </Routes>
-      </Router>
-      <MovieModal showOption={showOption} setShow={setShow}/>
-    </div>
+    // <div className="App">
+    //   <Router>
+    //     <Sidebar/>
+    //   </Router>
+    //   <button onClick={()=>{setShow({show:true,movieID:2})}}>{/*should receive ID from props.movieID*/}
+    //     movie 1
+    //   </button>
+    //   <button onClick={()=>{setShow({show:true,movieID:278})}}>{/*should receive ID from props.movieID*/}
+    //     movie 2
+    //   </button>
+    //   <button onClick={()=>{setShow({show:true,movieID:573})}}>{/*should receive ID from props.movieID*/}
+    //     movie 3
+    //   </button>
+    //   <button onClick={()=>{setShow({show:true,movieID:3})}}>{/*should receive ID from props.movieID*/}
+    //     movie 4
+    //   </button>
+    //   <MovieModal showOption={showOption} setShow={setShow}/>
+    // </div>
+    <HomePage/>
   );
 }
 
