@@ -21,7 +21,6 @@ const cachePage = data => ({
 
 const fetchNewPopularPage = (pageNum) => (dispatch, getState) => {
     const page = getState().popularPage.cachedPages[pageNum];
-
     if (page && page.status === STATUS_TYPE.start) {
         return;
     }

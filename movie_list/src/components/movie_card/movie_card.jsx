@@ -29,3 +29,5 @@ function MovieCard(props) {
         </div>
     )
 }
+
+export default MovieCard;

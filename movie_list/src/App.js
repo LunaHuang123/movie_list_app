@@ -1,10 +1,13 @@
 import { useState } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import './App.css';
+
+import MovieList from './components/movieListComponent/layout';
 import MovieModal from './components/movie_modal';
 import Sidebar from './components/sidebar/sidebar';
 import HomePage from './components/homepage/homepage_container'
 
+import LikeBlockStoreTest from './tests/likeBlockStoreTest';
 function App() {
   const [showOption,setShow] = useState({show:false,movieID:null});
   return (

@@ -4,7 +4,7 @@ import Homepage from './homepage';
 
 const mSTP = (state) => {
     const popularMoviesList = [];
-    if (state.popularPage.cachedPages[1]) {
+    if (state.popularPage.cachedPages[1] && state.popularPage.cachedPages[1].data) {
         for(const popularMovie of state.popularPage.cachedPages[1].data.results) {
             popularMoviesList.push(popularMovie)
         };

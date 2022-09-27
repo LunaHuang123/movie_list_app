@@ -1,4 +1,7 @@
 .App {
+  background-color: #FCE694;
+  display: wrap;
+  position: relative;
   text-align: center;
 }
 
