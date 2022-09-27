@@ -10,13 +10,13 @@ const popularPageReducer = (state = initialState, action) => {
     let newState = Object.assign({}, state);
     switch(action.type) {
         case (ACTION_TYPES.popularPage.cachePageStart): 
-            newState[action.pageNum] = {status: STATUS_TYPE.start}
+            newState.cachedPages[action.pageNum] = {status: STATUS_TYPE.start}
             return newState;
         case (ACTION_TYPES.popularPage.cachePageSuccess):
-            newState[action.data.page] = {data: action.data, status: STATUS_TYPE.success}
+            newState.cachedPages[action.data.page] = {data: action.data, status: STATUS_TYPE.success}
             return newState;
         case (ACTION_TYPES.popularPage.cachePageFailed):
-            newState[action.pageNum] = {status: STATUS_TYPE.failed}
+            newState.cachedPages[action.pageNum] = {status: STATUS_TYPE.failed}
             return newState;
         default:
             return state;
