@@ -7,7 +7,7 @@ import Sidebar from './components/sidebar/sidebar';
 import LikedMoviesListPage from './pages/liked_movies_list_page';
 import BlockedMoviesListPage from './pages/blocked_movies_list_page';
 import HomePage from './components/homepage/homepage_container'
-
+import { PAGE_ROUTE } from './constants/page_route';
 function App() {
   const [showOption,setShow] = useState({show:false,movieID:null});
   return (
@@ -15,15 +15,15 @@ function App() {
       <Router>
         <Sidebar/>
         <Routes>
-          <Route path='top_rated'>
+          <Route path={PAGE_ROUTE.homePage} element={<HomePage/>}/>
+          <Route path={PAGE_ROUTE.topRatedPage}>
             <Route index element={<TopRatedPage setShowDetail={setShow}/>}/>
             <Route path=':pageNumber' element={<TopRatedPage setShowDetail={setShow}/>}/>
           </Route>
-          <Route path='liked_movies' element={<LikedMoviesListPage setShowDetail={setShow} />}/>
-          <Route path='blocked_movies' element={<BlockedMoviesListPage setShowDetail={setShow}/>}/>
+          <Route path={PAGE_ROUTE.likedListPage} element={<LikedMoviesListPage setShowDetail={setShow} />}/>
+          <Route path={PAGE_ROUTE.blockedListPage} element={<BlockedMoviesListPage setShowDetail={setShow}/>}/>
         </Routes>
       </Router>
-      <HomePage/>
       <MovieModal showOption={showOption} setShow={setShow}/>
     </div>
   );
