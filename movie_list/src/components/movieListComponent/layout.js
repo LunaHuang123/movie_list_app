@@ -14,7 +14,8 @@ function MovieList({ movieListData, status, setShowDetail}) {
   const likeList = useSelector((state) => state.likeBlockLists.likedList);
   const blockList = useSelector((state) => state.likeBlockLists.blockedList);
   movieListData = movieListData || sampleArray;
-  movieListData.sort(getSortFunction(sortOption)); // sort the movie list according to sort option
+  movieListData.sort(getSortFunction(sortOption));
+  movieListData = movieListData.filter(movie => blockList[movie.id] === undefined); // sort the movie list according to sort option
   // const result = postsArray
   // .filter((a,i,b) => b.findIndex((t) => t.moviename === a.moviename) === i)
   // .reduce((agg, item, index) => {
