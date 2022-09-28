@@ -1,17 +1,5 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-@import './components/homepage/homepage.css';
-<<<<<<< HEAD:src/index.css
-@import './components/movie_card/movie_card.css';
-=======
->>>>>>> 80d9ea37f5819e146c314e7d0baebfb3dd1fc48b:movie_list/src/index.css
-
-=======
->>>>>>> b6163e870a67a485689903a3b6f2b69f6a1cc2d2
-=======
 @import './components/homepage/homepage.css';
 
->>>>>>> 80d9ea37f5819e146c314e7d0baebfb3dd1fc48b
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

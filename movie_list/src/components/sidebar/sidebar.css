@@ -1,18 +1,3 @@
-<<<<<<< HEAD
-.nav-link {
-  border-bottom: 1px solid transparent;
-}
-
-.nav-link:hover {
-  border-bottom: 1px solid grey;
-}
-
-.navbar-brand {
-  font-size: 24px;
-  font-family: 'Monoton', sans-serif;
-  cursor: pointer;
-}
-=======
 nav.navbar {
   box-shadow: 0px 1px 5px 1px rgba(0,0,0,0.5);
   -webkit-box-shadow: 0px 1px 5px 1px rgba(0,0,0,0.5);
@@ -57,4 +42,3 @@ nav.navbar {
   border: 1px solid grey;
 }
 
->>>>>>> 80d9ea37f5819e146c314e7d0baebfb3dd1fc48b
