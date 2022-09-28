@@ -42,6 +42,7 @@ function MovieList({ movieListData, status, setShowDetail}) {
               description={movie.overview}
               like={!!likeList[movie.id]}
               block={!!blockList[movie.id]}
+              isIndexPage={true}
               imgClickHandler={()=>setShowDetail({show:true, movieID: movie.id})}
             />)
           :'Loading'
