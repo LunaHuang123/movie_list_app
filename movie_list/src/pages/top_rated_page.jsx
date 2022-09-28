@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
-import { useParams } from 'react-router';
+import React, { useEffect, useState } from 'react';
+import { useParams, useNavigate } from 'react-router';
 import { connect } from 'react-redux';
 import MovieList from '../components/movieListComponent/layout';
 import { fetchSaveTopRatedPage } from '../actionCreators/topRatedPageActionCreator';
-
+import Button from 'react-bootstrap/Button';
 // A wrapper that fetch page data then feed to innercomponent
 const fetchDataWrapper = (InnerComponent) => {
   return function (props) {
@@ -60,7 +60,7 @@ export default function TopRatedPage(props) {
   return (
     <div>
       <h2>Top Rated Movies</h2>
-      <ConnectList pageNumber={pageNumber} {...props}/>
+      <ConnectList pageNumber={pageNumber} {...props} />
     </div>
   );
 }
