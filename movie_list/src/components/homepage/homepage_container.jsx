@@ -9,7 +9,6 @@ const mSTP = (state) => {
             popularMoviesList.push(popularMovie)
         };
     }
-    console.log(popularMoviesList);
     return {
         popularList : popularMoviesList  
     }
