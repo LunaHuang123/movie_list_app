@@ -66,7 +66,7 @@ function compareDate(a, b) {
 }
 
 export { getSortFunction };
-export default function (option) {
+export default function getSortFunctionFromOption(option) {
   return getSortFunction(mapOptionToType(option));
 };
 
