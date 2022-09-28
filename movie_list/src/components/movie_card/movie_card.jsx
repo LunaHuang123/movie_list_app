@@ -17,7 +17,6 @@ class MovieCard extends React.Component{
         this.imgClickHandler = this.imgClickHandler.bind(this);
         this.likeHandler = this.likeHandler.bind(this);
         this.blockHandler = this.blockHandler.bind(this);
-        this.moreDetailsHandler = this.moreDetailsHandler.bind(this);
     }
     
     imgClickHandler() {
@@ -26,11 +25,6 @@ class MovieCard extends React.Component{
         }
     }
 
-    moreDetailsHandler() {
-        return (
-            <MovieModal/>
-        )
-    }
 
     likeHandler() {
         if (this.state.isLike) { //button displays unlike
@@ -74,7 +68,7 @@ class MovieCard extends React.Component{
                         <div className='movie-card-btn-wrap-like-block-list'>
                             <div onClick={this.likeHandler} className='movie-card-like-btn-like-blocked-list'>{this.state.isLike ? <FontAwesomeIcon className='active icon' icon={faHeart} /> : <FontAwesomeIcon className='icon' icon={faHeart} />}</div>
                             <div onClick={this.blockHandler} className='movie-card-block-btn-like-blocked-list'>{this.state.isBlock ? <FontAwesomeIcon className='active icon' icon={faBan} /> : <FontAwesomeIcon className='icon' icon={faBan} />}</div>
-                            <div onClick={this.moreDetailsHandler}><FontAwesomeIcon className='icon' icon={faEllipsisH} /></div>
+                            <div onClick={this.imgClickHandler}><FontAwesomeIcon className='icon' icon={faEllipsisH} /></div>
                         </div>
                     }
                 </div>
