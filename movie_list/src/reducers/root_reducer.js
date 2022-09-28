@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { combineReducers } from "redux";
 import movieDetailsReducer from "./movieDetailsReducer";
 import topRatedPageReducer from "./topRatedPageReducer";
@@ -12,3 +13,7 @@ const rootReducer = combineReducers({
 
 
 export default rootReducer;
+=======
+
+
+>>>>>>> b6163e870a67a485689903a3b6f2b69f6a1cc2d2

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
@@ -25,8 +26,21 @@ function App() {
         </Routes>
       </Router>
       <MovieModal showOption={showOption} setShow={setShow}/>
+=======
+import logo from './logo.svg';
+import './App.css';
+
+function App() {
+  return (
+    <div className="App">
+      REACT IS ONLINE!!!
+>>>>>>> b6163e870a67a485689903a3b6f2b69f6a1cc2d2
     </div>
   );
 }
 
+<<<<<<< HEAD
 export default App;
+=======
+export default App;
+>>>>>>> b6163e870a67a485689903a3b6f2b69f6a1cc2d2

@@ -3,11 +3,8 @@
   display: wrap;
   position: relative;
   text-align: center;
-<<<<<<< HEAD:src/App.css
-  padding-top: 78px;
-=======
   padding-top: 80px;
->>>>>>> 80d9ea37f5819e146c314e7d0baebfb3dd1fc48b:movie_list/src/App.css
+  text-align: center;
 }
 
 .App-logo {
