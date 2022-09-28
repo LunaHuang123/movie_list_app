@@ -1,5 +1,4 @@
 import React from 'react'
-import baseURL from '../../constants/base_url';
 
 class Homepage extends React.Component {
     constructor(props) {

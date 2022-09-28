@@ -19,8 +19,8 @@ function App() {
             <Route index element={<TopRatedPage />}/>
             <Route path=':pageNumber' element={<TopRatedPage />}/>
           </Route>
-          <Route path='liked_movies' element={<LikedMoviesListPage />}/>
-          <Route path='blocked_movies' element={<BlockedMoviesListPage />}/>
+          <Route path='liked_movies' element={<LikedMoviesListPage setShowDetail={setShow} />}/>
+          <Route path='blocked_movies' element={<BlockedMoviesListPage setShowDetail={setShow}/>}/>
         </Routes>
       </Router>
       <HomePage/>

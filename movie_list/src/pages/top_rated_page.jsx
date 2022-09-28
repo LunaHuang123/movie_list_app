@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
-import { useParams } from 'react-router';
+import React, { useEffect, useState } from 'react';
+import { useParams, useNavigate } from 'react-router';
 import { connect } from 'react-redux';
 import MovieList from '../components/movieListComponent/layout';
 import { fetchSaveTopRatedPage } from '../actionCreators/topRatedPageActionCreator';
-
+import Button from 'react-bootstrap/Button';
 // A wrapper that fetch page data then feed to innercomponent
 const fetchDataWrapper = (InnerComponent) => {
   return function (props) {
@@ -40,26 +40,46 @@ const ConnectList = connect(mapStateToProps, mapDispatchToProps)(fetchDataWrappe
 
 export default function TopRatedPage(props) {
   let params = useParams();
-  let pageNumber;
-  if (
-    props.pageNumber !== undefined &&
-    !isNaN(parseInt(props.pageNumber)) &&
-    parseInt(props.pageNumber) > 0
-  ) {
-    pageNumber = parseInt(props.pageNumber);
-  } else if (
-    params.pageNumber !== undefined &&
-    !isNaN(parseInt(params.pageNumber)) &&
-    parseInt(params.pageNumber) > 0
-  ) {
-    pageNumber = parseInt(params.pageNumber);
-  } else {
-    pageNumber = 1;
-  }
+  const navigate = useNavigate()
+  const [pageNumber, setPageNumber] = useState(1);
+  useEffect( ()=>{
+    if (
+      props.pageNumber !== undefined &&
+      !isNaN(parseInt(props.pageNumber)) &&
+      parseInt(props.pageNumber) > 0
+    ) {
+      setPageNumber(parseInt(props.pageNumber));
+    } else if (
+      params.pageNumber !== undefined &&
+      !isNaN(parseInt(params.pageNumber)) &&
+      parseInt(params.pageNumber) > 0
+    ) {
+      setPageNumber(parseInt(params.pageNumber));
+    } else {
+      setPageNumber(1);
+    }
+  },[params,props])
 
   return (
     <div>
       <h2>Top Rated Movies</h2>
+      <div id='pagination' style={{
+        height:'100px',
+        display:'flex',
+        justifyContent:'space-evenly',
+        alignItems:'center',
+        fontFamily:"'Times New Roman',Georgia,Serif"
+        }}>
+        <Button variant="outline-primary" onClick={()=>{
+          if(pageNumber > 1) {setPageNumber(pageNumber-1);
+          navigate(`/top_rated/${pageNumber-1}`);}
+        }}>Prev</Button>
+        <span style={{fontSize:'x-large'}}>{`Top Rated Movies Page ${pageNumber} of 517`}</span>
+        <Button variant="outline-success" onClick={()=>{
+          navigate(`/top_rated/${pageNumber+1}`);
+          setPageNumber(pageNumber+1);
+        }}>Next</Button>
+      </div>
       <ConnectList pageNumber={pageNumber} />
     </div>
   );
