@@ -1,47 +1,50 @@
 import React from 'react';
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
 import Button from './button';
 import sampleArray from './sampleArray.json';
 import MovieCard from '../movie_card/movie_card_container';
+import getSortFunction from '../utils/sort';
+import STATUS_TYPE from '../../reducers/statusTypes';
 // (parent: App) -- blockedMovies --> MovieList 
 
-function MovieList({ movieListData, blockedMovies }) {
+function MovieList({ movieListData, status, setShowDetail}) {
   const types = ["Title", "Release Date", "Vote Count", "Average Score"];
-  const sort = ["Ascdending", "Descending"];
-  const [active, setActive] = useState(types[0] + sort[0]);
   const [sortOption, setSortOption] = useState({type: null, isAscending: false});
-
+  const likeList = useSelector((state) => state.likeBlockLists.likedList);
+  const blockList = useSelector((state) => state.likeBlockLists.blockedList);
   movieListData = movieListData || sampleArray;
-    
-      // const result = postsArray
-      // .filter((a,i,b) => b.findIndex((t) => t.moviename === a.moviename) === i)
-      // .reduce((agg, item, index) => {
-      //   item.id = index + 1;
-      //   agg.push(item);
-      //   return agg;
-      // }, []);
-      // console.log(result);
-
-  // later when sort button is completed add sorting function
-  // when blocked list is completed add filter function    // const displayedMovies = movieListData
-  //   .filter( movie => check movie is (NOT) in blockMovies )
-  //   .sort(... sorting logic )
-
+  movieListData.sort(getSortFunction(sortOption)); // sort the movie list according to sort option
+  // const result = postsArray
+  // .filter((a,i,b) => b.findIndex((t) => t.moviename === a.moviename) === i)
+  // .reduce((agg, item, index) => {
+  //   item.id = index + 1;
+  //   agg.push(item);
+  //   return agg;
+  // }, []);
+  // console.log(result);
   return (
     <div>
-      <Button active={active} setActive={setActive} types={types} sortOption={sortOption} setSortOption = {setSortOption}/>
+      <Button types={types} sortOption={sortOption} setSortOption = {setSortOption}/>
       <div>
-        {movieListData.map(movie => 
-          <MovieCard
-            key={movie.id}
-            title={movie.title}
-            movieId={parseInt(movie.id)}
-            posterPath={movie.poster_path}
-            releaseDate={movie.release_date}
-            voteCount={movie.vote_count}
-            score={movie.vote_average}
-            description={movie.overview}
-          />)}
+        {
+          status === STATUS_TYPE.success
+          ?movieListData.map(movie => 
+            <MovieCard
+              key={movie.id}
+              title={movie.title}
+              movieId={parseInt(movie.id)}
+              posterPath={movie.poster_path}
+              releaseDate={movie.release_date}
+              voteCount={movie.vote_count}
+              score={movie.vote_average}
+              description={movie.overview}
+              like={!!likeList[movie.id]}
+              block={!!blockList[movie.id]}
+              imgClickHandler={()=>setShowDetail({show:true, movieID: movie.id})}
+            />)
+          :'Loading'
+        }
       </div>
     </div>
   )

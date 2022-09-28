@@ -16,8 +16,8 @@ function App() {
         <Sidebar/>
         <Routes>
           <Route path='top_rated'>
-            <Route index element={<TopRatedPage />}/>
-            <Route path=':pageNumber' element={<TopRatedPage />}/>
+            <Route index element={<TopRatedPage setShowDetail={setShow}/>}/>
+            <Route path=':pageNumber' element={<TopRatedPage setShowDetail={setShow}/>}/>
           </Route>
           <Route path='liked_movies' element={<LikedMoviesListPage setShowDetail={setShow} />}/>
           <Route path='blocked_movies' element={<BlockedMoviesListPage setShowDetail={setShow}/>}/>

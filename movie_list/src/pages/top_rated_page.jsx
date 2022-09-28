@@ -7,12 +7,12 @@ import Button from 'react-bootstrap/Button';
 // A wrapper that fetch page data then feed to innercomponent
 const fetchDataWrapper = (InnerComponent) => {
   return function (props) {
-    let {data, status, fetchData, pageNumber} = props;
+    let { fetchData, pageNumber, ...others} = props;
     useEffect(() => {
       fetchData(pageNumber);
     }, [pageNumber, fetchData])
     return (
-      <InnerComponent movieListData={data} status={status}/>
+      <InnerComponent {...others}/>
     );
   }
 }
@@ -20,18 +20,18 @@ const fetchDataWrapper = (InnerComponent) => {
 const mapStateToProps = (state, ownProps) => {
   let pageNumber = parseInt(ownProps.pageNumber);
   if (isNaN(pageNumber)) pageNumber = 1;
-  let data;
+  let movieListData;
   let status;
   if (state.topRatedPage.cachedPages[pageNumber]) {
-    data = state.topRatedPage.cachedPages[pageNumber].data
+    movieListData = state.topRatedPage.cachedPages[pageNumber].data
       ? state.topRatedPage.cachedPages[pageNumber].data.results
       : [];
     status = state.topRatedPage.cachedPages[pageNumber].status;
   } else {
-    data = [];
+    movieListData = [];
     status = 'NA';
   }
-  return {data, status};
+  return {movieListData, status};
 }
 
 const mapDispatchToProps = ({fetchData: fetchSaveTopRatedPage});
@@ -40,47 +40,27 @@ const ConnectList = connect(mapStateToProps, mapDispatchToProps)(fetchDataWrappe
 
 export default function TopRatedPage(props) {
   let params = useParams();
-  const navigate = useNavigate()
-  const [pageNumber, setPageNumber] = useState(1);
-  useEffect( ()=>{
-    if (
-      props.pageNumber !== undefined &&
-      !isNaN(parseInt(props.pageNumber)) &&
-      parseInt(props.pageNumber) > 0
-    ) {
-      setPageNumber(parseInt(props.pageNumber));
-    } else if (
-      params.pageNumber !== undefined &&
-      !isNaN(parseInt(params.pageNumber)) &&
-      parseInt(params.pageNumber) > 0
-    ) {
-      setPageNumber(parseInt(params.pageNumber));
-    } else {
-      setPageNumber(1);
-    }
-  },[params,props])
+  let pageNumber;
+  if (
+    props.pageNumber !== undefined &&
+    !isNaN(parseInt(props.pageNumber)) &&
+    parseInt(props.pageNumber) > 0
+  ) {
+    pageNumber = parseInt(props.pageNumber);
+  } else if (
+    params.pageNumber !== undefined &&
+    !isNaN(parseInt(params.pageNumber)) &&
+    parseInt(params.pageNumber) > 0
+  ) {
+    pageNumber = parseInt(params.pageNumber);
+  } else {
+    pageNumber = 1;
+  }
 
   return (
     <div>
       <h2>Top Rated Movies</h2>
-      <div id='pagination' style={{
-        height:'100px',
-        display:'flex',
-        justifyContent:'space-evenly',
-        alignItems:'center',
-        fontFamily:"'Times New Roman',Georgia,Serif"
-        }}>
-        <Button variant="outline-primary" onClick={()=>{
-          if(pageNumber > 1) {setPageNumber(pageNumber-1);
-          navigate(`/top_rated/${pageNumber-1}`);}
-        }}>Prev</Button>
-        <span style={{fontSize:'x-large'}}>{`Top Rated Movies Page ${pageNumber} of 517`}</span>
-        <Button variant="outline-success" onClick={()=>{
-          navigate(`/top_rated/${pageNumber+1}`);
-          setPageNumber(pageNumber+1);
-        }}>Next</Button>
-      </div>
-      <ConnectList pageNumber={pageNumber} />
+      <ConnectList pageNumber={pageNumber} {...props} />
     </div>
   );
 }

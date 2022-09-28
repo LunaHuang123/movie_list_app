@@ -9,4 +9,11 @@ const SORT_TYPE = {
   voteAverageDescend: 'vote_average_descend',
 };
 
-export { SORT_TYPE };
+const SORT_BUTTON_TYPE = {
+  title: 'Title',
+  release_date: 'Release Date', 
+  vote_count: 'Vote Count', 
+  average_score: 'Average Score'
+}
+
+export { SORT_TYPE, SORT_BUTTON_TYPE };
