@@ -6,6 +6,7 @@
 }
 
 .movie-card-btn-wrap {
+<<<<<<< HEAD
     margin-top:10px;
     display:flex;
     flex-direction:row;
@@ -58,12 +59,31 @@
 
 .movie-card-block-btn:hover {
     cursor:pointer;
+=======
+    display:flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.movie-card-like-btn {
+    padding:10px;
+    color:white;
+    background-color:orange
+}
+
+.movie-card-block-btn {
+    padding:10px;
+    color:white;
+    background-color:lightgrey;
+>>>>>>> 80d9ea37f5819e146c314e7d0baebfb3dd1fc48b
 }
 
 .movie-card-text {
     padding:5px;
     text-align: center;
     font-size: 14px;
+<<<<<<< HEAD
 }
 .movie-card-title {
     font-size: 20px;
@@ -93,3 +113,6 @@
     cursor:pointer;
 }
 
+=======
+}
+>>>>>>> 80d9ea37f5819e146c314e7d0baebfb3dd1fc48b

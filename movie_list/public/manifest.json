@@ -2,6 +2,7 @@
   "short_name": "React App",
   "name": "Create React App Sample",
 <<<<<<< HEAD
+<<<<<<< HEAD
   "icons": [],
 =======
   "icons": [
@@ -22,6 +23,9 @@
     }
   ],
 >>>>>>> b6163e870a67a485689903a3b6f2b69f6a1cc2d2
+=======
+  "icons": [],
+>>>>>>> 80d9ea37f5819e146c314e7d0baebfb3dd1fc48b
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",

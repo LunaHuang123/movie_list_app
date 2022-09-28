@@ -14,7 +14,12 @@ function MovieList({ movieListData, status, setShowDetail}) {
   const likeList = useSelector((state) => state.likeBlockLists.likedList);
   const blockList = useSelector((state) => state.likeBlockLists.blockedList);
   movieListData = movieListData || sampleArray;
+<<<<<<< HEAD
   movieListData.sort(getSortFunction(sortOption)); // sort the movie list according to sort option
+=======
+  movieListData.sort(getSortFunction(sortOption));
+  movieListData = movieListData.filter(movie => blockList[movie.id] === undefined); // sort the movie list according to sort option
+>>>>>>> 80d9ea37f5819e146c314e7d0baebfb3dd1fc48b
   // const result = postsArray
   // .filter((a,i,b) => b.findIndex((t) => t.moviename === a.moviename) === i)
   // .reduce((agg, item, index) => {
@@ -41,7 +46,10 @@ function MovieList({ movieListData, status, setShowDetail}) {
               description={movie.overview}
               like={!!likeList[movie.id]}
               block={!!blockList[movie.id]}
+<<<<<<< HEAD
               isIndexPage={true}
+=======
+>>>>>>> 80d9ea37f5819e146c314e7d0baebfb3dd1fc48b
               imgClickHandler={()=>setShowDetail({show:true, movieID: movie.id})}
             />)
           :'Loading'

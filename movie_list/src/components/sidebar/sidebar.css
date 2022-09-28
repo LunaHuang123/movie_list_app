@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .nav-link {
   border-bottom: 1px solid transparent;
 }
@@ -11,3 +12,49 @@
   font-family: 'Monoton', sans-serif;
   cursor: pointer;
 }
+=======
+nav.navbar {
+  box-shadow: 0px 1px 5px 1px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 0px 1px 5px 1px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0px 1px 5px 1px rgba(0,0,0,0.5);
+}
+
+.offcanvas {
+  background-color: rgb(33, 37, 41);
+  color: white;
+}
+
+.offcanvas .btn-close {
+  filter: invert(100);
+  transition: 0.2s;
+}
+
+.offcanvas .btn-close:hover {
+  transform: rotate(90deg);
+}
+
+.offcanvas.show .offcanvas-body a {
+  padding-left: 1em;
+  margin-bottom: 0.5em;
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+.offcanvas.show .offcanvas-title {
+  padding-left: 1em;
+}
+
+.nav-link {
+  border-radius: 1em;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  column-gap: 0.5em;
+  border: 1px solid transparent;
+}
+
+.nav-link:hover {
+  border: 1px solid grey;
+}
+
+>>>>>>> 80d9ea37f5819e146c314e7d0baebfb3dd1fc48b
