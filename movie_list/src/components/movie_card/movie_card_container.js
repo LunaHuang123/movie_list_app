@@ -1,4 +1,3 @@
-import React from 'react';
 import {connect} from 'react-redux';
 import { likeMovie, unlikeMovie, blockMovie, unblockMovie } from '../../actionCreators/like_block_action_creator';
 import MovieCard from './movie_card';

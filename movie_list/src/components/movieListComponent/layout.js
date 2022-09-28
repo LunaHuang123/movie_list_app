@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Button from './button';
 import sampleArray from './sampleArray.json';
 import MovieCard from '../movie_card/movie_card_container';
