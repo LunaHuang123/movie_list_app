@@ -1,4 +1,5 @@
 @import './components/homepage/homepage.css';
+@import './components/movie_card/movie_card.css';
 
 body {
   margin: 0;

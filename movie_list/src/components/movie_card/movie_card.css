@@ -6,22 +6,58 @@
 }
 
 .movie-card-btn-wrap {
+    margin-top:10px;
     display:flex;
     flex-direction:row;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
+    width: 150px;
+    height:30px;
 }
 
 .movie-card-like-btn {
-    padding:10px;
+    margin-right:5px;
+    padding:5px;
     color:white;
-    background-color:orange
+    background-color:orange;
+    text-align: center;
+    border-radius:8px;
+    border: 1px solid rgb(207, 125, 25);
+}
+.movie-card-like-btn p {
+    margin: auto;
+    user-select: none;
+}
+
+.movie-card-block-btn p {
+    margin: auto;
+    user-select: none;
 }
 
 .movie-card-block-btn {
-    padding:10px;
+    margin-left:5px;
+    padding:5px;
     color:white;
     background-color:lightgrey;
+    text-align:center;
+    border-radius:8px;
+    border: 1px solid gray;
+}
+
+.movie-card-like-btn:hover {
+    cursor:pointer;
+}
+
+.movie-card-like-btn:active {
+    background-color:darkorange;
+}
+
+.movie-card-block-btn:active {
+    background-color:rgb(160, 160, 160);
+}
+
+.movie-card-block-btn:hover {
+    cursor:pointer;
 }
 
 .movie-card-text {
@@ -29,3 +65,31 @@
     text-align: center;
     font-size: 14px;
 }
+.movie-card-title {
+    font-size: 20px;
+    font-weight:bold;
+}
+
+.active {
+    color: red;
+}
+
+.movie-card-btn-wrap-like-block-list {
+    display: flex;
+    flex-direction: row;
+}
+
+.movie-card-btn-wrap-like-block-list div {
+    padding:10px;
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+    
+}
+
+.icon:hover {
+    cursor:pointer;
+}
+
