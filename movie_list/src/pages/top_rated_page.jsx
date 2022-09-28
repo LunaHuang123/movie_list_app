@@ -63,23 +63,7 @@ export default function TopRatedPage(props) {
   return (
     <div>
       <h2>Top Rated Movies</h2>
-      <div id='pagination' style={{
-        height:'100px',
-        display:'flex',
-        justifyContent:'space-evenly',
-        alignItems:'center',
-        fontFamily:"'Times New Roman',Georgia,Serif"
-        }}>
-        <Button variant="outline-primary" onClick={()=>{
-          if(pageNumber > 1) {setPageNumber(pageNumber-1);
-          navigate(`/top_rated/${pageNumber-1}`);}
-        }}>Prev</Button>
-        <span style={{fontSize:'x-large'}}>{`Top Rated Movies Page ${pageNumber} of 517`}</span>
-        <Button variant="outline-success" onClick={()=>{
-          navigate(`/top_rated/${pageNumber+1}`);
-          setPageNumber(pageNumber+1);
-        }}>Next</Button>
-      </div>
+      <Pagination />
       <ConnectList pageNumber={pageNumber} />
     </div>
   );
