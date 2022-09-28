@@ -6,6 +6,8 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 import { LinkContainer } from 'react-router-bootstrap';
 import './sidebar.css';
 import { PAGE_ROUTE } from '../../constants/page_route';
+import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
+import WhatshotOutlinedIcon from '@mui/icons-material/WhatshotOutlined';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import BlockOutlinedIcon from '@mui/icons-material/BlockOutlined';
 
@@ -28,6 +30,7 @@ function Logo() {
 
 
 export default function Sidebar() {
+  // Container fluid width:100% at all break point
   return (
     <Navbar bg='dark' variant='dark' expand={'lg'} className='mb-3' fixed='top' collapseOnSelect>
       <Container fluid> 
