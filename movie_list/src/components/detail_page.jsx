@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import baseUrl from '../constants/base_url'
 import { fetchSaveMovie } from '../actionCreators/movieDetailsActionCreator';
 import STATUS_TYPE from '../reducers/statusTypes';
-
+import PropTypes from 'prop-types';
 function DetailPage(props) {
   useEffect(() => {
     props.fetchMovieDetail(props.movieID);
@@ -36,5 +36,10 @@ const mapStateToProps = (state, ownProps) => {
 }
 const mapDispatchToProps = {
   fetchMovieDetail : (id) => fetchSaveMovie(id)
+}
+DetailPage.propTypes = {
+  movieID: PropTypes.number,
+  status: PropTypes.string,
+  data: PropTypes.object
 }
 export default connect(mapStateToProps,mapDispatchToProps)(DetailPage);
