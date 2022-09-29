@@ -5,10 +5,13 @@ import STATUS_TYPE from '../../reducers/statusTypes';
 function Pagination(props){
     const navigate = useNavigate();
     const total_pages = useSelector((state) => {
-        if(state.topRatedPage.cachedPages[props.pageNumber] && state.topRatedPage.cachedPages[props.pageNumber].status === STATUS_TYPE.success){
+        if(state.topRatedPage.cachedPages[1] && state.topRatedPage.cachedPages[1].status === STATUS_TYPE.success){
+            return state.topRatedPage.cachedPages[1].data.total_pages;
+        }
+        else if(state.topRatedPage.cachedPages[props.pageNumber] && state.topRatedPage.cachedPages[props.pageNumber].status === STATUS_TYPE.success){
             return state.topRatedPage.cachedPages[props.pageNumber].data.total_pages;
         }
-        else return 'N/A';
+        else return '';
     });
     return(
         <div id='pagination' style={{

@@ -17,7 +17,7 @@ function DetailPage(props) {
       <img id="dp_poster" src={baseUrl+props.data.poster_path} alt={''}/>
       <div id="dp_content">
         <div id="dp_title">{props.data.title}</div>
-        {props.data.genres && <div id="dp_genres">{props.data.genres.map(genre => (<div className={genre.name}>{genre.name}</div>))}</div>}
+        {props.data.genres && <div id="dp_genres">{props.data.genres.map(genre => (<div key={genre.name} className={genre.name}>{genre.name}</div>))}</div>}
         <div id="dp_overview">Overview: {props.data.overview}</div>
         <div id="dp_release_date">Release Date: {props.data.release_date}</div>
         {props.data.production_companies && <div id="dp_companies">Production Companies:{props.data.production_companies.map(company => (<div key={company.name}>{company.name}</div>))}</div>}

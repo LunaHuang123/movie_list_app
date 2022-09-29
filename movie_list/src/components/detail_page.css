@@ -4,6 +4,7 @@
     position:fixed;
     display:flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     overflow:auto;
@@ -14,16 +15,16 @@
 #dp_content{
     display:flex;
     height:500px;
-    width:60%;
+    width:70%;
     flex-direction: column;
     align-items: center;
-    margin:20px;
+    margin:10px;
     overflow:auto;
     object-fit: contain;
 }
 #dp_title{
     display:inline;
-    font-size: 250%;
+    font-size: 200%;
     font-family: 'Times New Roman', Times, serif;
     font-weight: bolder;
     margin-bottom:20px;
@@ -58,7 +59,7 @@
     font-size: x-large;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color:rgb(10, 69, 71);
-    margin-bottom:20px;
+    margin-bottom:60px;
 }
 #dp_companies div{
     display:inline-block;
