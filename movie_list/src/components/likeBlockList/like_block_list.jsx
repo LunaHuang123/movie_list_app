@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 import {PAGE_ROUTE} from '../../constants/page_route';
 import './like_block_list.css';
 import PropTypes from 'prop-types';
-import LikedMoviesListPage from '../../pages/liked_movies_list_page';
 
 function LikeBlockMoviesList (props) {
   // from fromList can be one of the following values 'liked_list', 'blocked_list',
@@ -50,7 +49,7 @@ function LikeBlockMoviesList (props) {
   );
 }
 
-LikedMoviesListPage.propTypes = {
+LikeBlockMoviesList.propTypes = {
   movies: PropTypes.array, 
   fromList: PropTypes.string, 
   setShowDetail: PropTypes.func,
