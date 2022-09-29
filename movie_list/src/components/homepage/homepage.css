@@ -2,29 +2,19 @@
     display: flex;
     flex-direction:column;
     justify-content: center;
-    background-color: gold;
-    height: 100vh;
+    align-items: center;
+    min-height: 100vh;
     width: 100%;
+    margin:auto;
 }
 
 .homepage-intro {
     font-size: 25px;
     font-weight: bold;
     text-align: center;
+    width:350px;
 }
 
-.homepage-carosel {
-    display: flex;
-    flex-direction: row;
-    justify-content:center;
-    align-items: center;
-}
-
-.homepage-carosel-details {
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-}
 
 .homepage-carosel-details p { 
     font-size: 22px;
@@ -34,6 +24,87 @@
 }
 
 .homepage-carosel-details img {
-    width: 200px;
-    height: 300px;
+    width: 300px;
+    height: 450px;
+    border-radius: 8px;
+}
+
+.homepage-explore {
+    width:200px;
+    height: 50px;
+    justify-self: center;
+    align-self: center;
+}
+
+.homepage-top-selections {
+    font-size: 20px;
+}
+
+
+.homepage-title {
+    font-size:22px;
+    font-weight:500;
+}
+
+.homepage-explore {
+    margin-bottom: 10px;
+    border-radius: 8px;
+    background-color:skyblue;
+    color:black;
+    font-weight:bold;
+    border: 0.5px solid grey;
+}
+
+.carosel-info {
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+}
+
+.homepage-details {
+    width:300px;
+}
+.homepage-details-inner {
+    display:none;
+}
+
+@media screen and (min-width:1600px) {
+    .carosel-info {
+        display:flex;
+        flex-direction:row;
+    }
+    .homepage-details {
+        display:none;
+    }
+    .homepage-details-inner {
+        display:block;
+    }
+
+    .carosel-info {
+        width: 800px;
+        background-color: lightgray;
+        border-radius:8px;
+        box-shadow: -0.5px 1px 3px 2px darkgray;
+    }
+    .carosel-info div {
+        border-left: 5px solid darkorange;
+        height:450px;
+        margin-left:-15px;
+        padding:10px;
+    }
+
+    .carosel-info img {
+        margin-right: 10px;
+    }
+
+    .homepage-intro {
+        width:800px;
+    }
+}
+
+.homepage-top-selections {
+    font-size: 26px;
+    font-weight:600;
 }
