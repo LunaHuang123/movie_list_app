@@ -1,0 +1,25 @@
+#moviecard-containerr {
+    display:grid;
+    min-height: 100vh;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: center;
+    align-items: start;
+    grid-gap: 2rem;
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+
+.movielist h2{
+    margin: 0 30px;
+    padding: 1em 0 0.5em 0;
+    text-align: start;
+    font-weight: bold;
+    border-bottom: 1px solid black;
+}
+
+@media screen and (max-width:768px) {
+    #moviecard-containerr{
+        grid-template-columns: 1fr;
+
+    }
+}

@@ -18,6 +18,7 @@ const CardGroup = styled.button`
   outline: 0;
   border-bottom: 2px solid transparent;
   transition: ease border-bottom 250ms;
+  margin-bottom: 2em;
   &:focus {
     border-bottom: 2px solid black;
     box-shadow: 0px 0px 2px black;

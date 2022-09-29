@@ -27,7 +27,7 @@ function MovieList({ movieListData, status, setShowDetail}) {
   return (
     <div>
       <Button types={types} sortOption={sortOption} setSortOption = {setSortOption}/>
-      <div>
+      <div id="moviecard-containerr">
         {
           status === STATUS_TYPE.success
           ?movieListData.map(movie => 
