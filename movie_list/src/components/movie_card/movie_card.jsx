@@ -101,5 +101,16 @@ class MovieCard extends React.Component{
 
     }
 }
-
+MovieCard.propTypes = {
+    isLike: PropTypes.bool,
+    isBlock: PropTypes.bool,
+    imgClickHandler: PropTypes.func,
+    isIndexPage: PropTypes.bool,
+    description: PropTypes.string,
+    voteCount: PropTypes.number,
+    releaseDate: PropTypes.string,
+    title: PropTypes.string,
+    movieId: PropTypes.number,
+    posterPath: PropTypes.string
+}
 export default MovieCard;
