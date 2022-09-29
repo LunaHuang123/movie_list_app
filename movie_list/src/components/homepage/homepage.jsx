@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 class Homepage extends React.Component {
     constructor(props) {
@@ -18,7 +19,7 @@ class Homepage extends React.Component {
             } else if (this.props.popularList && this.state.index === this.props.popularList.length-1) {
                 this.setState({index: 0})
             }
-        }, 1500)
+        }, 2500)
     }
 
     componentWillUnmount() {
@@ -31,14 +32,21 @@ class Homepage extends React.Component {
         return (
         (this.props.popularList.length > 0) ?
             <div className='homepage'>
-                <p className='homepage-intro'>Welcome to Movie List. Check out some of our Selections!</p>
+                <p className='homepage-intro'>Welcome to Movie List. Ready to find your favorite movie?</p>
+                <p className='homepage-top-selections'>Top Selections</p>
+                <Link to='/top_rated'><button className='homepage-explore'>Explore Now!</button></Link>
                 <div className='homepage-carosel'>
                     <div className='homepage-carosel-details'>
-                        <img onClick={this.loadMovieDetails} src={`https://image.tmdb.org/t/p/w342${this.props.popularList[this.state.index].poster_path}`} alt="" />
-                        <p>{this.props.popularList[this.state.index].title}</p>
+                        <div className='carosel-info'>
+                            <img onClick={this.loadMovieDetails} src={`https://image.tmdb.org/t/p/w342${this.props.popularList[this.state.index].poster_path}`} alt="" />
+                            <div>
+                                <p className='homepage-title'>{this.props.popularList[this.state.index].title}</p>
+                                <p className='homepage-details-inner'>{this.props.popularList[this.state.index].overview}</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                
+                <p className='homepage-details'>{this.props.popularList[this.state.index].overview}</p>
             </div>
         :
         null
