@@ -3,7 +3,7 @@ import { faEllipsisH } from '@fortawesome/free-solid-svg-icons'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
 import { faBan } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import PropTypes from 'prop-types';
+import MovieModal from '../movie_modal';
 
 class MovieCard extends React.Component{
     constructor(props) {
@@ -101,19 +101,6 @@ class MovieCard extends React.Component{
         )
 
     }
-}
-//prop checking
-MovieCard.propTypes = {
-    isLike: PropTypes.bool,
-    isBlock: PropTypes.bool,
-    imgClickHandler: PropTypes.func,
-    isIndexPage: PropTypes.bool,
-    description: PropTypes.string,
-    voteCount: PropTypes.number,
-    releaseDate: PropTypes.string,
-    title: PropTypes.string,
-    movieId: PropTypes.number,
-    posterPath: PropTypes.string
 }
 
 export default MovieCard;
