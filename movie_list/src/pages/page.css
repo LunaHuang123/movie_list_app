@@ -1,0 +1,11 @@
+.likeblock-page {
+  min-height: calc(100vh - 80px);
+}
+
+.likeblock-page h2 {
+  margin: 0 30px;
+  padding: 1em 0 0.5em 0;
+  text-align: start;
+  font-weight: bold;
+  border-bottom: 1px solid black;
+}
