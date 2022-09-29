@@ -1,6 +1,6 @@
 import Modal from 'react-bootstrap/Modal';
 import DetailPage from './detail_page';
-
+import PropTypes from 'prop-types';
 function MovieModal(props) {
   const {showOption, setShow} = props;
   const handleClose = () => setShow({...showOption,show:false});
@@ -18,5 +18,8 @@ function MovieModal(props) {
     </>
   );
 }
-
+MovieModal.propTypes = {
+  showOption: PropTypes.object,
+  setShow: PropTypes.func
+}
 export default MovieModal;

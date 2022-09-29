@@ -2,6 +2,7 @@ import Button from 'react-bootstrap/Button';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router';
 import STATUS_TYPE from '../../reducers/statusTypes';
+import PropTypes from 'prop-types';
 function Pagination(props){
     const navigate = useNavigate();
     const total_pages = useSelector((state) => {
@@ -32,5 +33,7 @@ function Pagination(props){
         </div>
     )
 }
-
+Pagination.propTypes = {
+    pageNumber: PropTypes.number
+}
 export default Pagination;
