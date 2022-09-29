@@ -40,7 +40,7 @@ function LikeBlockMoviesList (props) {
             title={movie.title}
             posterPath={movie.posterPath}
             showDetails
-            imgClickHandler={() => setShowDetail({show: true, movieID: movie.id})}
+            imgClickHandler={() => setShowDetail({show: true, movieID: parseInt(movie.id)})}
             like={movie.isLike}
             block={movie.isBlock}
           />

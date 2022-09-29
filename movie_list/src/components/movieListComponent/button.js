@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const arrowStyle = {
   position: 'absolute',
-  right: '0.5rem',
+  right: '0.3rem',
   top: '50%',
   transform: 'translate(0, -50%)', 
 }
