@@ -10,7 +10,7 @@ export default class ErrorBoundary extends React.Component {
     };
   }
 
-  getDerivedStateFromError() {
+  static getDerivedStateFromError() {
     return {
       hasError: true,
     }
