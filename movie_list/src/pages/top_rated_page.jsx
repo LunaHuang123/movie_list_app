@@ -5,6 +5,7 @@ import MovieList from '../components/movieListComponent/layout';
 import { fetchSaveTopRatedPage } from '../actionCreators/topRatedPageActionCreator';
 import Pagination from '../components/pagination/pagination';
 import { PAGE_ROUTE } from '../constants/page_route';
+import './top_rated_page.css';
 // A wrapper that fetch page data then feed to innercomponent
 const fetchDataWrapper = (InnerComponent) => {
   return function (props) {
@@ -59,7 +60,7 @@ export default function TopRatedPage(props) {
   }
 
   return (
-    <div>
+    <div className="movielist">
       <h2>Top Rated Movies</h2>
       <Pagination pageRouteType={PAGE_ROUTE.topRatedPage} pageNumber={pageNumber} {...props}/>
       <ConnectList pageNumber={pageNumber} {...props}/>
