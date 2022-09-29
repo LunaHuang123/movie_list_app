@@ -1,5 +1,6 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
+import React from 'react';
+import {Link} from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 class Homepage extends React.Component {
     constructor(props) {
@@ -53,5 +54,10 @@ class Homepage extends React.Component {
         ) 
     }
 }
+
+Homepage.propTypes = {
+    popularList: PropTypes.array
+}
+
 
 export default Homepage
