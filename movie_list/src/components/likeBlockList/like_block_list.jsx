@@ -5,6 +5,7 @@ import FROM_LIST from '../../constants/from_list';
 import { Link } from 'react-router-dom';
 import {PAGE_ROUTE} from '../../constants/page_route';
 import './like_block_list.css';
+import PropTypes from 'prop-types';
 
 function LikeBlockMoviesList (props) {
   // from fromList can be one of the following values 'liked_list', 'blocked_list',
@@ -35,7 +36,7 @@ function LikeBlockMoviesList (props) {
         movie => 
           <MovieCard 
             key={movie.id}
-            movieId={movie.id}
+            movieId={parseInt(movie.id)}
             title={movie.title}
             posterPath={movie.posterPath}
             showDetails
@@ -47,6 +48,12 @@ function LikeBlockMoviesList (props) {
     </div>
   );
 }
+
+LikeBlockMoviesList.propTypes = {
+  movies: PropTypes.array, 
+  fromList: PropTypes.string, 
+  setShowDetail: PropTypes.func,
+};
 
 const mapStateToProps = (state, ownProps) => {
   const movies = [];

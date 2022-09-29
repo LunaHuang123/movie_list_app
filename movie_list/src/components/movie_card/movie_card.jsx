@@ -3,7 +3,7 @@ import { faEllipsisH } from '@fortawesome/free-solid-svg-icons'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
 import { faBan } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import MovieModal from '../movie_modal';
+import PropTypes from 'prop-types';
 
 class MovieCard extends React.Component{
     constructor(props) {
