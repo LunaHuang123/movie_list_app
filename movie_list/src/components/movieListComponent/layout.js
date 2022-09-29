@@ -6,6 +6,7 @@ import sampleArray from './sampleArray.json';
 import MovieCard from '../movie_card/movie_card_container';
 import getSortFunction from '../utils/sort';
 import STATUS_TYPE from '../../reducers/statusTypes';
+import { PropTypes } from 'prop-types';
 // (parent: App) -- blockedMovies --> MovieList 
 
 function MovieList({ movieListData, status, setShowDetail}) {
@@ -51,5 +52,11 @@ function MovieList({ movieListData, status, setShowDetail}) {
     </div>
   )
 }
+
+MovieList.propTypes = {
+  movieListData: PropTypes.array,
+  status: PropTypes.string, 
+  setShowDetail: PropTypes.func,
+};
 
 export default MovieList;

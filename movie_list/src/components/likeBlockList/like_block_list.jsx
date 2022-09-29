@@ -35,7 +35,7 @@ function LikeBlockMoviesList (props) {
         movie => 
           <MovieCard 
             key={movie.id}
-            movieId={movie.id}
+            movieId={parseInt(movie.id)}
             title={movie.title}
             posterPath={movie.posterPath}
             showDetails
