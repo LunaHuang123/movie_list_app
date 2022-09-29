@@ -1,0 +1,151 @@
+.detailPage {
+    height:100%;
+    width:100%;
+    position:fixed;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    overflow:auto;
+}
+.fade.modal{
+    padding-left: 0px !important;
+}
+#dp_content{
+    display:flex;
+    height:500px;
+    width:70%;
+    flex-direction: column;
+    align-items: center;
+    margin:10px;
+    overflow:auto;
+    object-fit: contain;
+}
+#dp_title{
+    display:inline;
+    font-size: 200%;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    margin-bottom:20px;
+}
+#dp_genres{
+    margin-bottom:20px;
+}
+#dp_genres div{
+    display:inline-block;
+    border: 1px solid black;
+    border-radius: 8px;
+    padding:8px;
+    margin:5px;
+    color:white;
+}
+#dp_overview{
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+    color:rgb(18, 18, 95);
+    margin:10px;
+    margin-bottom: 20px;
+}
+#dp_release_date{
+    font-size: large;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-style: italic;
+    text-decoration: underline;
+    margin-bottom:20px;
+    color:rgb(115, 14, 14);
+}
+#dp_companies {
+    font-size: x-large;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color:rgb(10, 69, 71);
+    margin-bottom:60px;
+}
+#dp_companies div{
+    display:inline-block;
+    font-size:large;
+    border: 1px solid rgb(10, 69, 71);
+    border-radius: 8px;
+    padding:8px;
+    margin:5px;
+}
+#dp_poster {
+    height: 500px;
+    width: 300px;
+    margin:20px;
+}
+.Action {
+    background-color:red
+}
+
+.Adventure {
+    background-color:rgb(29, 159, 202);
+}
+
+.Animation {
+    background-color:rgb(36, 36, 238)
+}
+
+.Comedy {
+    background-color: rgb(76, 145, 122);
+}
+
+.Crime {
+    background-color:blueviolet;
+}
+
+.Documentary {
+    background-color:gray;
+}
+
+.Drama {
+    background-color:rgb(128, 128, 128);
+}
+
+.Family {
+    background-color:rgb(184, 48, 71);
+}
+
+.Fantasy {
+    background-color: darkorange;
+}
+
+.History {
+    background-color:darkcyan;
+}
+
+.Horror {
+    background-color: darkred;
+}
+
+.Music {
+    background-color: purple;
+}
+
+.Mystery {
+    background-color:darkorchid;
+}
+
+.Romance {
+    background-color:rgb(184, 104, 118);
+}
+
+.Sciencefiction {
+    background-color:rgb(62, 139, 139);
+}
+
+.Thriller {
+    background-color:darkslategray;
+}
+
+.Tvmovie {
+    background-color:mediumslateblue;
+}
+
+.War {
+    background-color:rgb(63, 5, 5);
+}
+
+.Western {
+    background-color:rgb(90, 49, 49);
+}
