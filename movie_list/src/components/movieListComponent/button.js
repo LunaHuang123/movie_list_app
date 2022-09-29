@@ -3,14 +3,14 @@ import styled from "styled-components";
 
 const arrowStyle = {
   position: 'absolute',
-  right: '10px',
+  right: '0.5rem',
   top: '50%',
   transform: 'translate(0, -50%)', 
 }
 
 const CardGroup = styled.button`
   position: relative;
-  padding: 10px 30px;
+  padding: 10px 20px;
   cursor: pointer;
   opacity: 0.6;
   background: white;
@@ -19,6 +19,10 @@ const CardGroup = styled.button`
   border-bottom: 2px solid transparent;
   transition: ease border-bottom 250ms;
   margin-bottom: 2em;
+  @media (max-width:500px){
+    font-size: 70%;
+    padding: 7px 14px;
+  }
   &:focus {
     border-bottom: 2px solid black;
     box-shadow: 0px 0px 2px black;
