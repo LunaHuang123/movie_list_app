@@ -13,13 +13,15 @@ function DetailPage(props) {
     return(<header>Loading...</header>);
   }
   return (
-    <div className='detailPage' style={{ backgroundImage: 'url(' + baseUrl + props.data.backdrop_path + ')', backgroundSize: 'cover' }}>
-        <img id="dp_poster" src={baseUrl+props.data.poster_path} alt={''}/>
+    <div className='detailPage' style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url(' + baseUrl + props.data.backdrop_path + ')', backgroundSize: 'cover' }}>
+      <img id="dp_poster" src={baseUrl+props.data.poster_path} alt={''}/>
+      <div id="dp_content">
         <div id="dp_title">{props.data.title}</div>
-        {props.data.genres && <ul>{props.data.genres.map(genre => (<li key={genre.id}>{genre.name}</li>))}</ul>}
+        {props.data.genres && <div id="dp_genres">{props.data.genres.map(genre => (<div key={genre.name} className={genre.name}>{genre.name}</div>))}</div>}
         <div id="dp_overview">Overview: {props.data.overview}</div>
         <div id="dp_release_date">Release Date: {props.data.release_date}</div>
-        {props.data.production_companies && <ul>Production Companies:{props.data.production_companies.map(company => (<li key={company.name}>{company.name}</li>))}</ul>}
+        {props.data.production_companies && <div id="dp_companies">Production Companies:{props.data.production_companies.map(company => (<div key={company.name}>{company.name}</div>))}</div>}
+      </div>
     </div>
   )
 }

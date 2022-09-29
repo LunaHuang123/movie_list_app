@@ -8,10 +8,10 @@ function MovieModal(props) {
   return (
     <>
       <Modal show={showOption.show} onHide={handleClose} fullscreen={true}>
-        <Modal.Header closeButton>
+        <Modal.Header style={{backgroundColor:'rgb(33,37,41)',color:'white',border:'0'}} closeButton closeVariant={'white'}>
           <Modal.Title>Movie Details</Modal.Title>
         </Modal.Header>
-        <Modal.Body>
+        <Modal.Body style={{objectFit:'contain',padding:'0px'}}>
           <DetailPage movieID={showOption.movieID}/>
         </Modal.Body>
       </Modal>
