@@ -102,7 +102,7 @@ class MovieCard extends React.Component{
 
     }
 }
-
+//prop checking
 MovieCard.propTypes = {
     isLike: PropTypes.bool,
     isBlock: PropTypes.bool,
