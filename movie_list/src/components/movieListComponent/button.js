@@ -10,7 +10,7 @@ const arrowStyle = {
 
 const CardGroup = styled.button`
   position: relative;
-  padding: 10px 30px;
+  padding: 10px 20px;
   cursor: pointer;
   opacity: 0.6;
   background: white;
@@ -19,6 +19,7 @@ const CardGroup = styled.button`
   border-bottom: 2px solid transparent;
   transition: ease border-bottom 250ms;
   margin-bottom: 2em;
+  flex-direction: 'row';
   &:focus {
     border-bottom: 2px solid black;
     box-shadow: 0px 0px 2px black;
