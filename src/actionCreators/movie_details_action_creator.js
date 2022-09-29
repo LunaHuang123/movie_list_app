@@ -1,6 +1,6 @@
-import ACTION_TYPES from "./actionTypes";
-import STATUS_TYPE from "../reducers/statusTypes";
-import fetchMovieDetails from "../api/fetchMovieDetails";
+import ACTION_TYPES from "./action_types";
+import STATUS_TYPE from "../reducers/status_types";
+import fetchMovieDetails from "../api/fetch_movie_details";
 
 const startFetchMovie = (movieID) => ({
   type: ACTION_TYPES.movieDetails.cacheMovieStart,

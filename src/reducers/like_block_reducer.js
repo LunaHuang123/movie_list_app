@@ -1,4 +1,4 @@
-import ACTION_TYPES from '../actionCreators/actionTypes';
+import ACTION_TYPES from '../actionCreators/action_types';
 
 const initialState = {
   likedList : {},

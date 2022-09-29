@@ -5,7 +5,7 @@ import Button from './button';
 import sampleArray from './sampleArray.json';
 import MovieCard from '../movie_card/movie_card_container';
 import getSortFunction from '../utils/sort';
-import STATUS_TYPE from '../../reducers/statusTypes';
+import STATUS_TYPE from '../../reducers/status_types';
 import PropTypes from 'prop-types';
 // (parent: App) -- blockedMovies --> MovieList 
 

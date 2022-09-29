@@ -1,7 +1,7 @@
 import Button from 'react-bootstrap/Button';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router';
-import STATUS_TYPE from '../../reducers/statusTypes';
+import STATUS_TYPE from '../../reducers/status_types';
 import PropTypes from 'prop-types';
 function Pagination(props){
     const navigate = useNavigate();

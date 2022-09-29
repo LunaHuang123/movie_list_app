@@ -1,5 +1,5 @@
 import Modal from 'react-bootstrap/Modal';
-import DetailPage from './detail_page';
+import DetailPage from '../detailPage/detail_page';
 import PropTypes from 'prop-types';
 function MovieModal(props) {
   const {showOption, setShow} = props;

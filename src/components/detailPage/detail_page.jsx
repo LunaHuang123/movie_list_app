@@ -1,9 +1,9 @@
 import './detail_page.css';
 import { useEffect } from 'react';
 import { connect } from 'react-redux';
-import baseUrl from '../constants/base_url'
-import { fetchSaveMovie } from '../actionCreators/movieDetailsActionCreator';
-import STATUS_TYPE from '../reducers/statusTypes';
+import baseUrl from '../../constants/base_url'
+import { fetchSaveMovie } from '../../actionCreators/movie_details_action_creator';
+import STATUS_TYPE from '../../reducers/status_types';
 import PropTypes from 'prop-types';
 function DetailPage(props) {
   useEffect(() => {

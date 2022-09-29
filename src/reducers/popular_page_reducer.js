@@ -1,5 +1,5 @@
-import ACTION_TYPES from "../actionCreators/actionTypes";
-import STATUS_TYPE from "./statusTypes";
+import ACTION_TYPES from "../actionCreators/action_types";
+import STATUS_TYPE from "./status_types";
 
 const initialState = {
     cachedPages : {}

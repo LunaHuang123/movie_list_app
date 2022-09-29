@@ -1,7 +1,7 @@
 
 import { combineReducers } from "redux";
-import movieDetailsReducer from "./movieDetailsReducer";
-import topRatedPageReducer from "./topRatedPageReducer";
+import movieDetailsReducer from "./movie_details_reducer";
+import topRatedPageReducer from "./top_rated_page_reducer";
 import popularPageReducer from "./popular_page_reducer";
 import likeBlockReducer from "./like_block_reducer";
 const rootReducer = combineReducers({

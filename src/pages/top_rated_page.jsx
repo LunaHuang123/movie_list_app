@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useParams } from 'react-router';
 import { connect } from 'react-redux';
 import MovieList from '../components/movieListComponent/layout';
-import { fetchSaveTopRatedPage } from '../actionCreators/topRatedPageActionCreator';
+import { fetchSaveTopRatedPage } from '../actionCreators/top_rated_page_action_creator';
 import Pagination from '../components/pagination/pagination';
 import { PAGE_ROUTE } from '../constants/page_route';
 import './top_rated_page.css';

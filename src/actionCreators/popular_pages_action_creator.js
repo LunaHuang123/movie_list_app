@@ -1,5 +1,5 @@
-import ACTION_TYPES from "./actionTypes";
-import STATUS_TYPE from "../reducers/statusTypes";
+import ACTION_TYPES from "./action_types";
+import STATUS_TYPE from "../reducers/status_types";
 import fetchPopularPage  from "../api/fetch_popular_page";
 
 const startFetchPage = (pageNum) => ({

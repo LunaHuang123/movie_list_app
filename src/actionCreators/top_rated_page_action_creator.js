@@ -1,6 +1,6 @@
-import ACTION_TYPES from "./actionTypes";
-import STATUS_TYPE from "../reducers/statusTypes";
-import fetchTopRatedPage from "../api/fetchTopRatedPage";
+import ACTION_TYPES from "./action_types";
+import STATUS_TYPE from "../reducers/status_types";
+import fetchTopRatedPage from "../api/fetch_top_rated_page";
 
 // tell store the fetch has started
 const startFetchPage = (pageNumber) => ({

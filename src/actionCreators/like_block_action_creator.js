@@ -1,4 +1,4 @@
-import ACTION_TYPES from "./actionTypes";
+import ACTION_TYPES from "./action_types";
 
 const likeMovie = (movieID,pageNum) => ({
   type: ACTION_TYPES.likedList.addMovie,
