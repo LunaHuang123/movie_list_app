@@ -6,7 +6,7 @@ import sampleArray from './sampleArray.json';
 import MovieCard from '../movie_card/movie_card_container';
 import getSortFunction from '../utils/sort';
 import STATUS_TYPE from '../../reducers/statusTypes';
-import { PropTypes } from 'prop-types';
+import PropTypes from 'prop-types';
 // (parent: App) -- blockedMovies --> MovieList 
 
 function MovieList({ movieListData, status, setShowDetail}) {
@@ -31,21 +31,24 @@ function MovieList({ movieListData, status, setShowDetail}) {
       <div id="moviecard-containerr">
         {
           status === STATUS_TYPE.success
-          ?movieListData.map(movie => 
-            <MovieCard
-              key={movie.id}
-              title={movie.title}
-              movieId={parseInt(movie.id)}
-              posterPath={movie.poster_path}
-              releaseDate={movie.release_date}
-              voteCount={movie.vote_count}
-              score={movie.vote_average}
-              description={movie.overview}
-              like={!!likeList[movie.id]}
-              block={!!blockList[movie.id]}
-              isIndexPage={true}
-              imgClickHandler={()=>setShowDetail({show:true, movieID: movie.id})}
-            />)
+          ?
+            movieListData.length === 0
+            ?'All Movies on This Page Are Blocked!'
+            :movieListData.map(movie => 
+              <MovieCard
+                key={movie.id}
+                title={movie.title}
+                movieId={parseInt(movie.id)}
+                posterPath={movie.poster_path}
+                releaseDate={movie.release_date}
+                voteCount={movie.vote_count}
+                score={movie.vote_average}
+                description={movie.overview}
+                like={!!likeList[movie.id]}
+                block={!!blockList[movie.id]}
+                isIndexPage={true}
+                imgClickHandler={()=>setShowDetail({show:true, movieID: movie.id})}
+              />)
           :'Loading'
         }
       </div>
